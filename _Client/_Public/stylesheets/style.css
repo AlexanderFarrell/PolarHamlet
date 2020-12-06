@@ -1,0 +1,16 @@
+html {
+  background-color: black;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: aliceblue;
+}
+
+a {
+  color: #00B7FF;
+}

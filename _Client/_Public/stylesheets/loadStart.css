@@ -1,0 +1,69 @@
+#LoadBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle farthest-corner, rgb(20, 25, 36), rgb(38, 15, 58));
+}
+
+#LoadingTitle {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 18%;
+    color: #ff0051;
+    font-size: 9vmin;
+    text-align: center;
+}
+
+#LoadingItem {
+    color: white;
+    font-size: 4vmin;
+    font-weight: lighter;
+    position: absolute;
+    width: calc(100% - calc(10vmin + 8vmax));
+    left: calc(10vmin + 8vmax);
+    bottom: calc(2vmin + 4vmax);
+    text-align: left;
+}
+
+#LoadIcon {
+    position: absolute;
+    padding: 1px;
+    margin: 1px;
+    border: 10px aqua;
+    background-size: contain;
+    background-position: center;
+    bottom: 5vmin;
+    left: 5vmin;
+    width: 8vmax;
+    height: 8vmax;
+    animation: spin 2s linear infinite;
+}
+
+.loader {
+    /*border: 16px solid #f3f3f3;*/ /* Light grey */
+    /*border-top: 16px solid #3498db;*. /* Blue */
+    /*border-radius: 100%;*/
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#LoadBar {
+
+}
+
+#LoadHint {
+    position: absolute;
+    color: #ff0051;
+    font-size: 3vmin;
+    width: 100%;
+    left: 0;
+    top: 78%;
+    text-align: center;
+}

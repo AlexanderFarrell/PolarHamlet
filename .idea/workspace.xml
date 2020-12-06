@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/PolarHamlet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/AppScreen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Load/LoadModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Load/LoadView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Exceptions/IncompleteCodeError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Exceptions/ParameterError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_View/GameView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/Game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/loadStart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/api-router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/loaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/routerLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/loaders/serverLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/modules/database-manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/modules/loginHandler.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lB4C02JfCSv9AFc98OGmfTWk0D" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Temp/VoidMoney" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\MorphSight\Desktop\Polar Hamlet\node_modules\prettier" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public\images" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Machine\_Screen" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Build Single JS File WebPack">
+    <configuration name="Run Unit Tests - Jest" type="JavaScriptTestRunnerJest" temporary="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/_Dev/tests/error.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Game Server - Dev" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/_Server">
+      <method v="2" />
+    </configuration>
+    <configuration name="Build Single JS File WebPack" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run Unit Tests" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Jest.Run Unit Tests - Jest" />
+      <item itemvalue="Node.js.Run Game Server - Dev" />
+      <item itemvalue="npm.Build Single JS File WebPack" />
+      <item itemvalue="npm.Run Unit Tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.Run Unit Tests - Jest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="" />
+      <created>1607057019667</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607057019667</updated>
+      <workItem from="1607057021116" duration="6268000" />
+      <workItem from="1607107429713" duration="9846000" />
+      <workItem from="1607194305623" duration="4687000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
