@@ -1,44 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/PolarHamlet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/AppScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Load/LoadModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Load/LoadView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Exceptions/IncompleteCodeError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Exceptions/ParameterError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_View/GameView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/Game.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/loadStart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/api-router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/loaders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/routerLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/loaders/serverLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/modules/database-manager.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Server/modules/loginHandler.js" afterDir="false" />
-    </list>
+    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,11 +100,23 @@
       <updated>1607057019667</updated>
       <workItem from="1607057021116" duration="6268000" />
       <workItem from="1607107429713" duration="9846000" />
-      <workItem from="1607194305623" duration="4687000" />
+      <workItem from="1607194305623" duration="5305000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit New Version">
+      <created>1607214281083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607214281083</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit New Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit New Version" />
   </component>
 </project>
