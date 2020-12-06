@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoadGameScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/MainScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_View/UiContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/images/PolarHamletGem.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/start.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/loadStart.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/loadStart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,7 +126,7 @@
       <updated>1607057019667</updated>
       <workItem from="1607057021116" duration="6268000" />
       <workItem from="1607107429713" duration="9846000" />
-      <workItem from="1607194305623" duration="16232000" />
+      <workItem from="1607194305623" duration="16559000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -175,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607215846828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Start Menu on Startup">
+      <created>1607228690813</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607228690813</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +174,7 @@
     <MESSAGE value="Removed Webpack Build from running" />
     <MESSAGE value="Bug Fix: Express Session is now a regular dependency. Heroku didn't know to install it." />
     <MESSAGE value="Bug Fix: Added Connect MemJS and Helmet to Dependencies. Prettier became a Dev Dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix: Added Connect MemJS and Helmet to Dependencies. Prettier became a Dev Dependency." />
+    <MESSAGE value="Added Start Menu on Startup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Start Menu on Startup" />
   </component>
 </project>
