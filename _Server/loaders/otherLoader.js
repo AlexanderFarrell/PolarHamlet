@@ -1,17 +1,19 @@
 exports.load = function load(app){
     console.log(" - Loading Vital Processes...");
 
-    const processEnv = require('dotenv');
+    //const processEnv = require('dotenv');
     const cookieParser = require('cookie-parser');
     const logger = require('morgan');
     const express = require('express');
     const path = require('path');
+    require('dotenv').config({path: path.resolve(__dirname, './../../local.env')});
 
-    try {
+    console.log(path.resolve(__dirname, './../../local.env'));
+    /*try {
         processEnv.config();
     } catch (error) {
         console.log("    - Notice: Did not find a .env file to set up environment variables");
-    }
+    }*/
 
     app.use(logger('dev'));
     app.use(express.json());

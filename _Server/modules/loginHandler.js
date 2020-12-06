@@ -2,9 +2,78 @@ const database = require('./database-manager');
 const bcrypt = require('bcrypt');
 const saltRounds = 12;
 
+function create(req, res, success, error) {
+    let username = req.bodyString('username');
+    let password = req.bodyString('password');
+
+    console.log("Request came in to create account. User " + username + ", Pass: " + password);
+
+    console.log("Checking Username");
+
+    CheckUser(() => {
+        console.log("Creating Hash");
+        CreateHashPassword((hash) => {
+            console.log("Creating Account");
+            Create(hash, () => {
+                console.log("Returning success!");
+                success();
+            })
+        })
+    });
+
+    function CheckUser(callback){
+        database.dataQuery("SELECT username from users where users.username = '" + username + "';", OnError, OnSuccess);
+
+        function OnError(error){
+            console.log(error);
+            Error("Error connecting to server.")
+        }
+
+        function OnSuccess(data){
+            console.log("Username is free.");
+
+            if (data.rows[0]) {
+                Error("Username already exists.")
+            } else {
+                callback();
+            }
+        }
+    }
+
+    function CreateHashPassword(callback){
+        bcrypt.hash(password, saltRounds, (err, hash) => {
+            if (err){
+                console.log("Could not hash password");
+                error("Error creating account.")
+            } else {
+                console.log("Hash Created: " + hash);
+                callback(hash);
+            }
+        })
+    }
+
+    function Create(hash, callback){
+         database.dataQuery("INSERT INTO users(username, pass) values ('" + username + "', '" + password +"');", OnError, OnSuccess);
+
+         function OnError(e){
+             console.log(e);
+             error("Error creating account.")
+         }
+
+         function OnSuccess(data){
+             callback();
+         }
+    }
+
+    function Error(message){
+        console.log("Error: " + message);
+        error(message)
+    }
+}
+
 function login(req, res, success, error) {
-    let username = req.body.username;
-    let password = req.body.password;
+    let username = req.bodyString('username');
+    let password = req.bodyString('password');
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         console.log(req.body.username);
@@ -49,8 +118,6 @@ function login(req, res, success, error) {
             }
         }
     })
-
-
 }
 
-module.exports = {login};
+module.exports = {create, login};

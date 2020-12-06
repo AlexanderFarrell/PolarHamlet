@@ -4,6 +4,7 @@ exports.load = function load(app){
     const compression = require('compression');
     const rateLimit = require('express-rate-limit');
     //const {body, check} = require('express-validator');
+    const sanitizer = require('sanitize').middleware;
 
     app.use(compression());
     app.use(helmet());
@@ -12,5 +13,6 @@ exports.load = function load(app){
         max: 150
     })
     app.use(limiter);
+    app.use(sanitizer);
     console.log("    - Security On!");
 }

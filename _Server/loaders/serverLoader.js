@@ -1,5 +1,5 @@
 const http = require('http');
-const debug = require('debug')('appName:server');
+const debug = require('debug')('polarhamlet:server');
 
 exports.load = function load(app){
     console.log(' - Loading Server...');

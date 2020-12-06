@@ -12,8 +12,16 @@ export class CreateLoginModel extends AppStateModel{
             dataType: 'json',
             data: {username: account, password: password},
             success: function (response) {
-                console.log("Successfully logged in");
-                callback(response);
+                if (response && response.success){
+                    console.log("Successfully logged in.");
+                    callback(response);
+                } else {
+                    if (response.errorMessage){
+                        error(response.errorMessage);
+                    } else {
+                        error("Error logging in.")
+                    }
+                }
             },
             error: function (status, errorThrown) {
                 console.log("Error logging in");
@@ -30,8 +38,16 @@ export class CreateLoginModel extends AppStateModel{
                 dataType: 'json',
                 data: {username: account, password: password},
                 success: function (response) {
-                    console.log("Successfully created account.");
-                    callback(response);
+                    if (response && response.success){
+                        console.log("Successfully created account.");
+                        callback(response);
+                    } else {
+                        if (response.errorMessage){
+                            error(response.errorMessage);
+                        } else {
+                            error("Error creating account.")
+                        }
+                    }
                 },
                 error: function (status, errorThrown) {
                     console.log("Error creating account.");

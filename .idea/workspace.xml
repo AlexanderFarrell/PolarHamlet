@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/start.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/start.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Server/api-router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/api-router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/serverLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/serverLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/modules/database-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/modules/database-manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/modules/loginHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/modules/loginHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Machine\_Screen" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.pack_client">
+  <component name="RunManager" selected="Node.js.Run Game Server - Dev">
     <configuration name="Run Unit Tests - Jest" type="JavaScriptTestRunnerJest" temporary="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -71,6 +73,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Run Game Server - Dev" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/_Server">
+      <envs>
+        <env name="DEBUG" value="polarhamlet:*" />
+      </envs>
       <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="ShConfigurationType" nameIsGenerated="true">
@@ -140,7 +145,7 @@
       <updated>1607057019667</updated>
       <workItem from="1607057021116" duration="6268000" />
       <workItem from="1607107429713" duration="9846000" />
-      <workItem from="1607194305623" duration="19416000" />
+      <workItem from="1607194305623" duration="27252000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -184,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607229080854</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Post requests to create account and login successful client side.">
+      <created>1607231614557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607231614557</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +209,8 @@
     <MESSAGE value="Bug Fix: Added Connect MemJS and Helmet to Dependencies. Prettier became a Dev Dependency." />
     <MESSAGE value="Added Start Menu on Startup" />
     <MESSAGE value="Added the actual javascript file to the deploy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the actual javascript file to the deploy" />
+    <MESSAGE value="Post requests to create account and login successful client side." />
+    <option name="LAST_COMMIT_MESSAGE" value="Post requests to create account and login successful client side." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

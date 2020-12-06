@@ -13,11 +13,12 @@ export class LoginScreen extends UiContainer{
         this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput">');
         this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput">');
         this.resultLabel = $('<div id="LoginLabel" class="StartLabel">Login</div>');
-        this.loginAccountButton = $('<button id="LoginAccountButton" class="StartButton">Login</button>')
-        this.backButtonLogin = $('<button id="BackButtonLoginScreen" class="StartButton">Back</button>')
+        this.loginAccountButton = $('<div id="LoginAccountButton" class="StartButton">Login</div>')
+        this.backButtonLogin = $('<div id="BackButtonLoginScreen" class="StartButton">Back</div>')
 
         const self = this;
         this.loginAccountButton.click(function (){
+            $('#LoginLabel').innerHTML = "Logging in...";
             Game.AppController.Active.Model.Login(
                 $('#AccountNameInputLogin').val(),
                 $('#AccountPasswordInputLogin').val(),

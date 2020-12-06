@@ -12,8 +12,8 @@ function connect(){
         client.connect();
         return client;
     } else {
-        var login = JSON.parse(fs.readFileSync(path.resolve(__dirname) + '\\log.json'));
-        var cs = "postgres://" +  login.username + ":" + login.password +"@localhost:" + login.port + "/" + login.database;
+        //var login = JSON.parse(fs.readFileSync(path.resolve(__dirname) + '\\log.json'));
+        var cs = "postgres://" +  process.env.database_username + ":" + process.env.database_password +"@localhost:" + process.env.database_port + "/" + process.env.database_database;
         console.log(cs);
         let client = new Client({
             //Development
@@ -35,7 +35,7 @@ function connectExecuteAndDisconnect(error, operation, callback, sql, parameters
         operation(client, sql, (localError, responseData) => {
             client.end();
             if (localError) {
-                throw new Error(localError.message);
+                error(localError.message);
             } else {
                 callback(responseData);
             }

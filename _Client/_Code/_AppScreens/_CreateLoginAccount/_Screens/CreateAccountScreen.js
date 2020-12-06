@@ -1,5 +1,6 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
 import {Game} from "../../../_Game/Game";
+import {doc} from "prettier";
 
 export class CreateAccountScreen extends UiContainer{
     constructor(ToMenu, ToGameMethod) {
@@ -14,16 +15,19 @@ export class CreateAccountScreen extends UiContainer{
         this.accountPasswordInput = $('<input id="AccountPasswordInput" class="StartInput">');
         this.accountPasswordCheckInput = $('<input id="AccountPasswordInputTwice" class="StartInput">');
         this.resultLabel = $('<div id="CreateLabel" class="StartLabel">Create Account</div>');
-        this.createAccountButton = $('<button id="CreateAccountButton" class="StartButton">Create Account</button>')
-        this.backButtonCreate = $('<button id="BackButtonCreateAccountScreen" class="StartButton">Back</button>')
+        this.createAccountButton = $('<div id="CreateAccountButton" class="StartButton">Create Account</div>')
+        this.backButtonCreate = $('<div id="BackButtonCreateAccountScreen" class="StartButton">Back</div>')
 
         this.createAccountButton.click(function (){
+            document.getElementById('CreateLabel').innerHTML = "Creating Account...";
             Game.AppController.Active.Model.Create(
                 $('#AccountNameInput').val(),
                 $('#AccountPasswordInput').val(),
                 $('#AccountPasswordInputTwice').val(),
                 (error) => {
-                    $('#LoginLabel').innerText = error;
+                    console.log("Error: " + error);
+                    $('#CreateLabel').innerHTML = error;
+                    document.getElementById('CreateLabel').innerHTML = error;
             }, (data) => {
                 $('#CreateAccountScreen').hide();
                 $('#LoadGameScreen').show();
