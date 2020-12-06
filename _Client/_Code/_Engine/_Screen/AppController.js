@@ -17,9 +17,12 @@ export class AppController {
                 throw error;
             }, () => {
                 this.IsTransitioning = false;
-                this.Active?.End();
-                this.Active = this.Next;
-                this.Active.Begin();
+                this.Active?.End((error) => {
+
+                }, () => {
+                    this.Active = this.Next;
+                    this.Active.Begin();
+                });
             });
         } else {
             throw new ParameterError("SwitchToString", 'screen', 'AppScreen', state);

@@ -12,7 +12,6 @@
     width: 100%;
     left: 0;
     top: 18%;
-    color: #ff0051;
     font-size: 9vmin;
     text-align: center;
 }
@@ -40,6 +39,7 @@
     width: 8vmax;
     height: 8vmax;
     animation: spin 2s linear infinite;
+    background-image: url("/../images/PolarHamletGem.png");
 }
 
 .loader {

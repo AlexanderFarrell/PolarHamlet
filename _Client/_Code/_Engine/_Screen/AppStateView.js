@@ -10,6 +10,28 @@ export class AppStateView {
         callback();
     }
 
+    Render(){
+        this._gameViews.forEach((view) => {
+            $('#root').append(view);
+        })
+    }
+
+    RemoveUi(){
+        this._gameViews.forEach((view) => {
+            view.remove();
+        })
+    }
+
+    Begin(error, callback){
+        this.Render();
+        callback();
+    }
+
+    End(error, callback){
+        this.RemoveUi()
+        callback();
+    }
+
     /*addGameView(gameView){
         if (gameView instanceof GameView){
             this._gameViews.push(gameView);

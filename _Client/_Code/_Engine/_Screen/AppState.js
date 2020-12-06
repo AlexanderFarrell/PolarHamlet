@@ -16,11 +16,27 @@ export class AppState {
         }
     }
 
-    Begin(){
+    Begin(error, callback){
+        this.Model.Begin(OnError, () => {
+            this.View.Begin(OnError, () => {
+                callback();
+            })
+        })
 
+        function OnError(err){
+            error(err);
+        }
     }
 
-    End(){
+    End(error, callback){
+        this.Model.Begin(OnError, () => {
+            this.View.Begin(OnError, () => {
+                callback();
+            })
+        })
 
+        function OnError(err){
+            error(err);
+        }
     }
 }

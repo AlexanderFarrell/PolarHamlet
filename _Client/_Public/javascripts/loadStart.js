@@ -3,7 +3,7 @@ const stylesheetsToLoad = [
 ]
 
 const scriptsToLoad = [
-    {name: "Void Money", url: "javascripts/main.js", type: "module"}
+    {name: "Polar Hamlet", url: "javascripts/main.js", type: "module"}
 ]
 
 function loadStylesheet(){
@@ -13,18 +13,30 @@ function loadStylesheet(){
 function load(){
     document.getElementById("LoadingTitle").innerText = "Initializing";
 
-    scriptsToLoad.forEach((scriptOrder) => {
-        document.getElementById("LoadingTitle").innerText = scriptOrder.name;
-        loadScript(scriptOrder);
-    });
+    try {
+        scriptsToLoad.forEach((scriptOrder) => {
+            document.getElementById("LoadingTitle").innerText = 'Loading ' + scriptOrder.name;
+            loadScript(scriptOrder, () => {
+                $('#loadStart').hide();
+            });
+        });
+    } catch (e) {
+        document.getElementById("LoadingTitle").innerText = "An error occurred loading the game. We are sorry for the inconvenience";
+    }
 
-    document.getElementById("LoadingTitle").innerText = "Starting Game";
+    //document.getElementById("LoadingTitle").innerText = "Starting Game";
 }
 
 function loadScript(scriptOrder, callback){
-    const script = document.createElement('script');
-    script.type = scriptOrder.type;
-    script.src = scriptOrder.url;
-    document.body.appendChild(script);
+    try {
+        const script = document.createElement('script');
+        script.type = scriptOrder.type;
+        script.src = scriptOrder.url;
+        document.body.appendChild(script);
+    } catch (e) {
+        throw new Error("Could not load script");
+    }
+
+    callback();
 }
 
