@@ -1,4 +1,5 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
+import {Game} from "../../../_Game/Game";
 
 export class LoginScreen extends UiContainer{
     constructor(toMainMenu, toLoadGame) {
@@ -11,15 +12,22 @@ export class LoginScreen extends UiContainer{
     Load() {
         this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput">');
         this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput">');
-        this.resultLabel = $('<div id="LoginLabel" class="StartLabel"></div>');
-        this.loginAccountButton = $('<div id="LoginAccountButton" class="StartButton">Login</div>')
-        this.backButtonLogin = $('<div id="BackButtonLoginScreen" class="StartButton">Back</div>')
+        this.resultLabel = $('<div id="LoginLabel" class="StartLabel">Login</div>');
+        this.loginAccountButton = $('<button id="LoginAccountButton" class="StartButton">Login</button>')
+        this.backButtonLogin = $('<button id="BackButtonLoginScreen" class="StartButton">Back</button>')
 
         const self = this;
         this.loginAccountButton.click(function (){
-            $('#LoginAccountScreen').hide();
-            $('#LoadGameScreen').show();
-            $('#StartTitle').innerHTML = "Starting Game";
+            Game.AppController.Active.Model.Login(
+                $('#AccountNameInputLogin').val(),
+                $('#AccountPasswordInputLogin').val(),
+                (error) => {
+                    $('#LoginLabel').innerText = error;
+            }, (data) => {
+                $('#LoginAccountScreen').hide();
+                $('#LoadGameScreen').show();
+                $('#StartTitle').innerHTML = "Starting Game";
+            });
         });
         this.backButtonLogin.click(function () {
             $('#MainScreen').show();
@@ -32,5 +40,9 @@ export class LoginScreen extends UiContainer{
         this.containerElement.append(this.resultLabel);
         this.containerElement.append(this.loginAccountButton);
         this.containerElement.append(this.backButtonLogin);
+    }
+
+    Login(){
+
     }
 }

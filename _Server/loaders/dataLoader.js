@@ -10,13 +10,19 @@ function setupSessionsMemcache(app){
             store: new MemcachedStore({
                 servers: [process.env.MEMCACHIER_SERVERS],
                 prefix: '_session_'
-            })
+            }),
+            cookie: {
+                maxAge: 60 * 60 * 24 * 31 * 1000
+            }
         }));
     } else {
         app.use(session({
-            secret: process.env.sessionSecret,
+            secret: 'HeyWhatIsC',
             resave: true,
-            saveUninitialized: true
+            saveUninitialized: true,
+            cookie: {
+                maxAge: 60 * 60 * 24 * 31 * 1000
+            }
         }));
     }
 }

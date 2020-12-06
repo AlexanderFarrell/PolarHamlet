@@ -1,5 +1,6 @@
 export class AppState {
     constructor(model, view) {
+        console.log(model);
         this.Model = model;
         this.View = view;
     }
@@ -19,11 +20,13 @@ export class AppState {
     Begin(error, callback){
         this.Model.Begin(OnError, () => {
             this.View.Begin(OnError, () => {
+                if (callback)
                 callback();
             })
         })
 
         function OnError(err){
+            if (error)
             error(err);
         }
     }
@@ -31,11 +34,13 @@ export class AppState {
     End(error, callback){
         this.Model.Begin(OnError, () => {
             this.View.Begin(OnError, () => {
+                if (callback)
                 callback();
             })
         })
 
         function OnError(err){
+            if (error)
             error(err);
         }
     }

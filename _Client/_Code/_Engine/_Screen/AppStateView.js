@@ -24,11 +24,13 @@ export class AppStateView {
 
     Begin(error, callback){
         this.Render();
+        if (callback)
         callback();
     }
 
     End(error, callback){
         this.RemoveUi()
+        if (callback)
         callback();
     }
 

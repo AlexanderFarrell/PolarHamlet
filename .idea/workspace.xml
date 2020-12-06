@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="" />
+    <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/api-router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/api-router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/dataLoader.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +42,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Temp/VoidMoney" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Temp/Week 12" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\MorphSight\Desktop\Polar Hamlet\node_modules\prettier" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -126,7 +140,7 @@
       <updated>1607057019667</updated>
       <workItem from="1607057021116" duration="6268000" />
       <workItem from="1607107429713" duration="9846000" />
-      <workItem from="1607194305623" duration="16559000" />
+      <workItem from="1607194305623" duration="19416000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -163,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607228690813</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added the actual javascript file to the deploy">
+      <created>1607229080854</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607229080854</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +196,11 @@
     <MESSAGE value="Bug Fix: Express Session is now a regular dependency. Heroku didn't know to install it." />
     <MESSAGE value="Bug Fix: Added Connect MemJS and Helmet to Dependencies. Prettier became a Dev Dependency." />
     <MESSAGE value="Added Start Menu on Startup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Start Menu on Startup" />
+    <MESSAGE value="Added the actual javascript file to the deploy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the actual javascript file to the deploy" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
