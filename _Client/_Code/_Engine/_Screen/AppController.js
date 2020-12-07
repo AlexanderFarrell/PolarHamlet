@@ -18,17 +18,15 @@ export class AppController {
             }, () => {
                 this.IsTransitioning = false;
                 if (this.Active){
-                    this.Active?.End((error) => {
+                    this.Active.End((error) => {
 
                     }, () => {
                         this.Active = this.Next;
-                        console.log(this.Active);
-                        this.Active.Begin();
+                        this.Next.Begin();
                     });
                 } else {
                     this.Active = this.Next;
-                    console.log(this.Active);
-                    this.Active.Begin();
+                    this.Next.Begin();
                 }
 
             });

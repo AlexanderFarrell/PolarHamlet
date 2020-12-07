@@ -11,9 +11,10 @@ export class CreateAccountScreen extends UiContainer{
     }
 
     Load() {
+        this.form = $('<form name="CreateForm"></form>')
         this.accountNameInput = $('<input id="AccountNameInput" class="StartInput" placeholder="Username">');
-        this.accountPasswordInput = $('<input id="AccountPasswordInput" class="StartInput" placeholder="Password" type="password">');
-        this.accountPasswordCheckInput = $('<input id="AccountPasswordInputTwice" class="StartInput" placeholder="Confirm Password" type="password">');
+        this.accountPasswordInput = $('<input id="AccountPasswordInput" class="StartInput" placeholder="Password" type="password" autocomplete="new-password">');
+        this.accountPasswordCheckInput = $('<input id="AccountPasswordInputTwice" class="StartInput" placeholder="Confirm Password" type="password" autocomplete="new-password">');
         this.resultLabel = $('<div id="CreateLabel" class="StartLabel"></div>');
         this.createAccountButton = $('<div id="CreateAccountButton" class="StartButton">Create Account</div>')
         this.backButtonCreate = $('<div id="BackButtonCreateAccountScreen" class="StartButton">Back</div>')
@@ -31,18 +32,24 @@ export class CreateAccountScreen extends UiContainer{
             }, (data) => {
                 $('#CreateAccountScreen').hide();
                 $('#LoadGameScreen').show();
-                $('#StartTitle').innerHTML = "Starting Game";
+                document.getElementById('StartTitle').innerText = "Starting Game";
+                document.getElementById('LoadLabel').innerHTML = "Your account has been created!";
+                    Game.AppController.Active.Model.LoadGame();
+
             });
         });
         this.backButtonCreate.click(function () {
             $('#CreateAccountScreen').hide();
             $('#MainScreen').show();
-            $('#StartTitle').innerHTML = "Polar Hamlet";
+            //$('#StartTitle').innerHTML = "Polar Hamlet";
+            document.getElementById('StartTitle').innerText = "Polar Hamlet";
+            Game.AppController.Active.Model.LoadGame();
         })
 
-        this.containerElement.append(this.accountNameInput);
-        this.containerElement.append(this.accountPasswordInput);
-        this.containerElement.append(this.accountPasswordCheckInput);
+        this.containerElement.append(this.form);
+        this.form.append(this.accountNameInput);
+        this.form.append(this.accountPasswordInput);
+        this.form.append(this.accountPasswordCheckInput);
         this.containerElement.append(this.resultLabel);
         this.containerElement.append(this.createAccountButton);
         this.containerElement.append(this.backButtonCreate);

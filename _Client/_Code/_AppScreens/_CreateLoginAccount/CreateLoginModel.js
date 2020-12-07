@@ -1,8 +1,14 @@
 import {AppStateModel} from "../../_Engine/_Screen/AppStateModel";
+import {GameStateFlow} from "../../_Game/GameStateFlow";
 
 export class CreateLoginModel extends AppStateModel{
     constructor() {
         super();
+    }
+
+    LoadGame(){
+        console.log("Loading Game");
+        GameStateFlow.ToMenu();
     }
 
     Login(account, password, error, callback) {
@@ -13,7 +19,6 @@ export class CreateLoginModel extends AppStateModel{
             data: {username: account, password: password},
             success: function (response) {
                 if (response && response.success){
-                    console.log("Successfully logged in.");
                     callback(response);
                 } else {
                     if (response.errorMessage){
@@ -24,7 +29,6 @@ export class CreateLoginModel extends AppStateModel{
                 }
             },
             error: function (status, errorThrown) {
-                console.log("Error logging in");
                 error();
             }
         });
@@ -39,7 +43,6 @@ export class CreateLoginModel extends AppStateModel{
                 data: {username: account, password: password},
                 success: function (response) {
                     if (response && response.success){
-                        console.log("Successfully created account.");
                         callback(response);
                     } else {
                         if (response.errorMessage){
@@ -50,7 +53,6 @@ export class CreateLoginModel extends AppStateModel{
                     }
                 },
                 error: function (status, errorThrown) {
-                    console.log("Error creating account.");
                     error();
                 }
             });

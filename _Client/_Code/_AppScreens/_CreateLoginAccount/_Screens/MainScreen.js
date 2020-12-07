@@ -16,11 +16,13 @@ export class MainScreen extends UiContainer{
             $('#MainScreen').hide();
             $('#CreateAccountScreen').show();
             $('#StartTitle').innerHTML = "Create Account";
+            document.getElementById('StartTitle').innerText = "Create Account";
         });
         this.loginButton.click(function () {
             $('#MainScreen').hide();
             $('#LoginAccountScreen').show();
             $('#StartTitle').innerHTML = "Login";
+            document.getElementById('StartTitle').innerText = "Login";
         })
 
         this.containerElement.append(this.createButton);

@@ -2,7 +2,7 @@ const database = require('./database-manager');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
-function create(req, res, success, error) {
+function create(req, res, success, error, shouldLoginOnCreate=true) {
     let username = req.bodyString('username');
     let password = req.bodyString('password');
 
@@ -61,6 +61,10 @@ function create(req, res, success, error) {
          }
 
          function OnSuccess(data){
+             if (shouldLoginOnCreate){
+                 req.session.username = username;
+             }
+
              callback();
          }
     }
@@ -68,6 +72,15 @@ function create(req, res, success, error) {
     function Error(message){
         console.log("Error: " + message);
         error(message)
+    }
+}
+
+function logout(req, res, success, error) {
+    try {
+        req.session.username = null;
+        success();
+    } catch (e) {
+        error("Error logging out.")
     }
 }
 

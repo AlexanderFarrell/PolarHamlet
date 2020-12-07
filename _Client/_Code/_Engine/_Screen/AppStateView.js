@@ -18,8 +18,10 @@ export class AppStateView {
 
     RemoveUi(){
         this._gameViews.forEach((view) => {
-            view.remove();
+            console.log(view);
+            view.removeFromHtml();
         })
+        $('#root').empty();
     }
 
     Begin(error, callback){

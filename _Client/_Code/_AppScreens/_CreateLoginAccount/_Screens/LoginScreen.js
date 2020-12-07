@@ -10,8 +10,9 @@ export class LoginScreen extends UiContainer{
     }
 
     Load() {
-        this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput" placeholder="Username">');
-        this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput" placeholder="Password" type="password">');
+        this.form = $('<form name="LoginForm"></form>')
+        this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput" placeholder="Username" autocomplete="username">');
+        this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput" placeholder="Password" type="password" autocomplete="current-password">');
         this.resultLabel = $('<div id="LoginLabel" class="StartLabel"></div>');
         this.loginAccountButton = $('<div id="LoginAccountButton" class="StartButton">Login</div>')
         this.backButtonLogin = $('<div id="BackButtonLoginScreen" class="StartButton">Back</div>')
@@ -30,16 +31,21 @@ export class LoginScreen extends UiContainer{
                 $('#LoginAccountScreen').hide();
                 $('#LoadGameScreen').show();
                 $('#StartTitle').innerHTML = "Starting Game";
+                    document.getElementById('StartTitle').innerText = "Starting Game";
+                    document.getElementById('LoadLabel').innerHTML = "Successfully logged in!";
+                    Game.AppController.Active.Model.LoadGame();
             });
         });
         this.backButtonLogin.click(function () {
             $('#MainScreen').show();
             $('#LoginAccountScreen').hide();
             $('#StartTitle').innerHTML = "Polar Hamlet";
+            document.getElementById('StartTitle').innerText = "Polar Hamlet";
         })
 
-        this.containerElement.append(this.accountNameInputLogin);
-        this.containerElement.append(this.accountPasswordInputLogin);
+        this.containerElement.append(this.form);
+        this.form.append(this.accountNameInputLogin);
+        this.form.append(this.accountPasswordInputLogin);
         this.containerElement.append(this.resultLabel);
         this.containerElement.append(this.loginAccountButton);
         this.containerElement.append(this.backButtonLogin);

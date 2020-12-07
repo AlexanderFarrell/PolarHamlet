@@ -32,8 +32,8 @@ export class AppState {
     }
 
     End(error, callback){
-        this.Model.Begin(OnError, () => {
-            this.View.Begin(OnError, () => {
+        this.Model.End(OnError, () => {
+            this.View.End(OnError, () => {
                 if (callback)
                 callback();
             })
