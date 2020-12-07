@@ -11,10 +11,10 @@ export class CreateAccountScreen extends UiContainer{
     }
 
     Load() {
-        this.accountNameInput = $('<input id="AccountNameInput" class="StartInput">');
-        this.accountPasswordInput = $('<input id="AccountPasswordInput" class="StartInput">');
-        this.accountPasswordCheckInput = $('<input id="AccountPasswordInputTwice" class="StartInput">');
-        this.resultLabel = $('<div id="CreateLabel" class="StartLabel">Create Account</div>');
+        this.accountNameInput = $('<input id="AccountNameInput" class="StartInput" placeholder="Username">');
+        this.accountPasswordInput = $('<input id="AccountPasswordInput" class="StartInput" placeholder="Password" type="password">');
+        this.accountPasswordCheckInput = $('<input id="AccountPasswordInputTwice" class="StartInput" placeholder="Confirm Password" type="password">');
+        this.resultLabel = $('<div id="CreateLabel" class="StartLabel"></div>');
         this.createAccountButton = $('<div id="CreateAccountButton" class="StartButton">Create Account</div>')
         this.backButtonCreate = $('<div id="BackButtonCreateAccountScreen" class="StartButton">Back</div>')
 

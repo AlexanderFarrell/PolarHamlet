@@ -1,6 +1,6 @@
 const database = require('./database-manager');
 const bcrypt = require('bcrypt');
-const saltRounds = 12;
+const saltRounds = 10;
 
 function create(req, res, success, error) {
     let username = req.bodyString('username');
@@ -53,7 +53,7 @@ function create(req, res, success, error) {
     }
 
     function Create(hash, callback){
-         database.dataQuery("INSERT INTO users(username, pass) values ('" + username + "', '" + password +"');", OnError, OnSuccess);
+         database.dataQuery("INSERT INTO users(username, pass) values ('" + username + "', '" + hash +"');", OnError, OnSuccess);
 
          function OnError(e){
              console.log(e);
@@ -75,49 +75,48 @@ function login(req, res, success, error) {
     let username = req.bodyString('username');
     let password = req.bodyString('password');
 
-    bcrypt.hash(password, saltRounds, (err, hash) => {
-        console.log(req.body.username);
+    console.log(req.body.username);
 
-        database.dataQuery("SELECT username, pass from users where users.username = '" + username + "';", onErrorDatabaseGet, onSuccessDatabaseGet);
+    database.dataQuery("SELECT username, pass from users where users.username = '" + username + "';", onErrorDatabaseGet, onSuccessDatabaseGet);
 
-        function onErrorDatabaseGet(data){
-            console.error("Error getting data from database");
-            error("Error getting data from database");
-        }
+    function onErrorDatabaseGet(data){
+        console.error("Error getting data from database");
+        error("Error getting data from database");
+    }
 
-        function onSuccessDatabaseGet(data){
-            console.log(data);
+    function onSuccessDatabaseGet(data){
+        console.log(data);
 
-            if (data.rows[0]){
-                let usernameRetrieved = data.rows[0]['username'];
-                console.log(usernameRetrieved);
-                let passwordRetrieved = data.rows[0]['pass'];
-                console.log(hash);
-                console.log(passwordRetrieved);
+        if (data.rows[0]){
+            let usernameRetrieved = data.rows[0]['username'];
+            console.log(usernameRetrieved);
+            let passwordRetrieved = data.rows[0]['pass'];
+            console.log(passwordRetrieved);
 
-                bcrypt.compare(password, passwordRetrieved, (err, res) => {
-                    res ? onSuccessLogin() : onErrorLogin();
-                })
-
-                bcrypt.compare(password, passwordRetrieved).then()
-
-                function onSuccessLogin(){
-                    console.log("Password is good");
-                    req.session.username = username;
-                    success();
+            bcrypt.compare(password, passwordRetrieved, (err, res) => {
+                if (res){
+                    onSuccessLogin();
+                } else {
+                    onErrorLogin();
                 }
+            })
 
-                function onErrorLogin(){
-                    console.log("Wrong")
-                    error("Invalid username or password");
-                }
+            function onSuccessLogin(){
+                console.log("Password is good");
+                req.session.username = username;
+                success();
             }
-            else {
-                console.log("no data?")
+
+            function onErrorLogin(){
+                console.log("Wrong")
                 error("Invalid username or password");
             }
         }
-    })
+        else {
+            console.log("no data?")
+            error("Invalid username or password");
+        }
+    }
 }
 
 module.exports = {create, login};

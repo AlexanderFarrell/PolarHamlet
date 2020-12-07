@@ -10,20 +10,22 @@ export class LoginScreen extends UiContainer{
     }
 
     Load() {
-        this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput">');
-        this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput">');
-        this.resultLabel = $('<div id="LoginLabel" class="StartLabel">Login</div>');
+        this.accountNameInputLogin = $('<input id="AccountNameInputLogin" class="StartInput" placeholder="Username">');
+        this.accountPasswordInputLogin = $('<input id="AccountPasswordInputLogin" class="StartInput" placeholder="Password" type="password">');
+        this.resultLabel = $('<div id="LoginLabel" class="StartLabel"></div>');
         this.loginAccountButton = $('<div id="LoginAccountButton" class="StartButton">Login</div>')
         this.backButtonLogin = $('<div id="BackButtonLoginScreen" class="StartButton">Back</div>')
 
         const self = this;
         this.loginAccountButton.click(function (){
-            $('#LoginLabel').innerHTML = "Logging in...";
+            //$('#LoginLabel').innerHTML = "Logging in...";
+            document.getElementById('LoginLabel').innerText = "Logging in...";
             Game.AppController.Active.Model.Login(
                 $('#AccountNameInputLogin').val(),
                 $('#AccountPasswordInputLogin').val(),
                 (error) => {
-                    $('#LoginLabel').innerText = error;
+                    //$('#LoginLabel').innerText = error;
+                    document.getElementById('LoginLabel').innerText = error;
             }, (data) => {
                 $('#LoginAccountScreen').hide();
                 $('#LoadGameScreen').show();
