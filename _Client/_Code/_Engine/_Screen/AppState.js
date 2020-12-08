@@ -32,8 +32,11 @@ export class AppState {
     }
 
     End(error, callback){
+        console.log("End Called");
         this.Model.End(OnError, () => {
+            console.log("Model Ended Called");
             this.View.End(OnError, () => {
+                console.log("View Ended Called");
                 if (callback)
                 callback();
             })

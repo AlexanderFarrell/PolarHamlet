@@ -2,18 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/Color.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/EventPublisher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Exceptions/GraphicsError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Body.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Part.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/Camera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/Orientation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/PhysicalMatter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/UpdateHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/VisualMatter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Mind/Mind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Spirit/Spirit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Engine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Material.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/MaterialFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Mesh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Renderer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/ShaderFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/shaders/colorFragment.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/shaders/colorVertex.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoadGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoadGameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/MainScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Server/modules/loginHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/modules/loginHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="GLSL Shader" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -31,8 +49,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1lB4C02JfCSv9AFc98OGmfTWk0D" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="autoscrollToSource" value="true" />
@@ -45,21 +68,26 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Temp/Week 12" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_Client/_Code/_ExternalLibraryNonNpm" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs.jest.jest_package" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\MorphSight\Desktop\Polar Hamlet\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_ExternalLibraryNonNpm" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Spirit" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Mind" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Body" />
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_AppScreens\_CreateLoginAccount\_Screens" />
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public\images" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Machine\_Screen" />
     </key>
   </component>
   <component name="RunManager" selected="npm.pack_client">
@@ -147,7 +175,9 @@
       <workItem from="1607057021116" duration="6268000" />
       <workItem from="1607107429713" duration="9846000" />
       <workItem from="1607194305623" duration="28417000" />
-      <workItem from="1607365770346" duration="7185000" />
+      <workItem from="1607365770346" duration="12568000" />
+      <workItem from="1607391568928" duration="6513000" />
+      <workItem from="1607398121508" duration="4061000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -212,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607367476577</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Autofill for username and pass creation and login now working on Chrome.">
+      <created>1607373190439</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607373190439</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +265,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit New Version" />
@@ -239,7 +277,8 @@
     <MESSAGE value="Post requests to create account and login successful client side." />
     <MESSAGE value="Sanitizes inputs" />
     <MESSAGE value="Glitch with username and password is now fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Glitch with username and password is now fixed." />
+    <MESSAGE value="Autofill for username and pass creation and login now working on Chrome." />
+    <option name="LAST_COMMIT_MESSAGE" value="Autofill for username and pass creation and login now working on Chrome." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

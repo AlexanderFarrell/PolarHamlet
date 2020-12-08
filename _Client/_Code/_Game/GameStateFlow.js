@@ -31,7 +31,8 @@ export class GameStateFlow {
     static ToGame(){
         let model = new PlayModel();
         let view = new PlayView();
-        let appState = new AppState(model, view);
-        this.LoadState(appState);
+        Game.AppController.SwitchToState(new AppState(model, view));
+        //let appState = new AppState(model, view);
+        //this.LoadState(appState);
     }
 }
