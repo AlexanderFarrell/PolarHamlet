@@ -7,11 +7,6 @@ export class PlayView extends AppStateView{
     }
 
     Load(error, callback) {
-        try {
-            GameBuilder.StartEngine();
-            callback();
-        } catch (e) {
-            error();
-        }
+        callback();
     }
 }

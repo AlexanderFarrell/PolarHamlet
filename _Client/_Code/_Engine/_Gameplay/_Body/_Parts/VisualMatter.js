@@ -1,6 +1,5 @@
 export class VisualMatter {
-    constructor(mesh, material) {
+    constructor(mesh) {
         this.Mesh = mesh;
-        this.Material = material;
     }
 }

@@ -5,14 +5,19 @@ export class Body {
     constructor() {
         this.OnAddEvent = new EventPublisher();
         this.OnRemoveEvent = new EventPublisher();
+        this.Parts = [];
     }
 
-    AddPart(name, part){
+    AddPart(part, name = null){
         if (part instanceof Part){
+            if (name === null) name = part.constructor.name;
+            this.Parts[name.toString()] = part;
             this[name.toString()] = part;
             this.OnAddEvent.Broadcast(part);
             part.Begin();
         }
+
+        return part;
     }
 
     RemovePart(name){
@@ -21,7 +26,18 @@ export class Body {
                 this[name].End();
             }
             this.OnRemoveEvent.Broadcast(this[name.toString()]);
+
+            let i = this.Parts.indexOf(this[name]);
+
+            if (i !== -1){
+                this.Parts.splice(i, 1);
+            }
+
             delete this[name];
         }
+    }
+
+    End(){
+
     }
 }

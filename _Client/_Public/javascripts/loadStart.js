@@ -17,7 +17,7 @@ function load(){
         scriptsToLoad.forEach((scriptOrder) => {
             document.getElementById("LoadingTitle").innerText = 'Loading ' + scriptOrder.name;
             loadScript(scriptOrder, () => {
-                $('#loadStart').hide();
+                //$('#loadStart').hide();
             });
         });
     } catch (e) {

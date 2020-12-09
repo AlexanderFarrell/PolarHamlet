@@ -48,6 +48,11 @@ export class CreateLoginView extends AppStateView{
         callback();
     }
 
+    Begin(error, callback) {
+        $('#loadStart').hide();
+        super.Begin(error, callback);
+    }
+
     ToMainMenu(){
         this.mainScreen.Show();
         this.createAccountScreen.Hide();

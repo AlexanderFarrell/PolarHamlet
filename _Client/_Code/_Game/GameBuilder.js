@@ -1,6 +1,5 @@
 import {AppController} from "../_Engine/_Screen/AppController";
-import {Renderer} from "../_Engine/_Rendering/Renderer";
-
+import {Engine} from '@babylonjs/core';
 const {Game} = require("./Game");
 
 export class GameBuilder {
@@ -10,11 +9,13 @@ export class GameBuilder {
     }
 
     static StartEngine(){
-        Game.Canvas = document.createElement('canvas');
-        Game.Canvas.id = 'GameCanvas';
-        document.body.append(Game.Canvas);
-        Game.Renderer = new Renderer();
-        Game.Renderer.Start();
+        Game.Canvas = document.getElementById('GameCanvas');
+        //Game.Canvas = document.createElement('canvas');
+        //Game.Canvas.id = 'GameCanvas';
+        //document.body.append(Game.Canvas);
+        Game.Engine = new Engine(Game.Canvas, false);
+        //Game.Renderer = new Renderer();
+        //Game.Renderer.Start();
     }
 
     static DestroyGame(){
