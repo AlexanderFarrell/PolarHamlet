@@ -5,33 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/Region.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/SceneEnv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/TileMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ClayMesh.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/UpdatableMesh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/TopDownCamera.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Adjective.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Dictionary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Noun.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Verb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/Realm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/World.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/AmbianceHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/LocationHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/TimeHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Verb/VerbContinuous.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Verb/VerbInstant.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/PhysicalMatter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/Mind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Spirit/Spirit.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/Website.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/views/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/Camera.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/Orientation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/VisualMatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/VisualMatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Engine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Material.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/MaterialFactory.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Mesh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/Renderer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Rendering/ShaderFactory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/TileMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/TileMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ClayMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ClayMesh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Part.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Part.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/PhysicalMatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/MainMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/UpdateHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/UpdateHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/VisualMatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/SceneObject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Mind/Mind.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Spirit/Spirit.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletWorld.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +51,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="GLSL Shader" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -62,6 +73,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -74,7 +86,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\MorphSight\Desktop\Polar Hamlet\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -83,11 +95,11 @@
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_ExternalLibraryNonNpm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Anava\_Setting" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Anava" />
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Legacy\_Parts" />
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Legacy" />
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Spirit" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Mind" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Body" />
     </key>
   </component>
   <component name="RunManager" selected="npm.pack_client">
@@ -185,7 +197,7 @@
       <workItem from="1607480663794" duration="3232000" />
       <workItem from="1607535030902" duration="1147000" />
       <workItem from="1607543169396" duration="2831000" />
-      <workItem from="1607546047733" duration="4689000" />
+      <workItem from="1607546047733" duration="20228000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -264,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607402315180</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Renders when creating!">
+      <created>1607550868102</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607550868102</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +313,8 @@
     <MESSAGE value="Glitch with username and password is now fixed." />
     <MESSAGE value="Autofill for username and pass creation and login now working on Chrome." />
     <MESSAGE value="Before Refactoring Renderer.&#10;&#10;Added OpenGL engine as well as some game logic stuff." />
-    <option name="LAST_COMMIT_MESSAGE" value="Before Refactoring Renderer.&#10;&#10;Added OpenGL engine as well as some game logic stuff." />
+    <MESSAGE value="Renders when creating!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renders when creating!" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

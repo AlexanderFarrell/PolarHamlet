@@ -33,7 +33,7 @@ export class LoginScreen extends UiContainer{
                 $('#StartTitle').innerHTML = "Starting Game";
                     document.getElementById('StartTitle').innerText = "Starting Game";
                     document.getElementById('LoadLabel').innerHTML = "Successfully logged in!";
-                    Game.AppController.Active.Model.LoadGame();
+                    Game.AppController.Active.Model.ToMenu();
             });
         });
         this.backButtonLogin.click(function () {

@@ -22,7 +22,7 @@ export class ClayMesh {
         this.AdditionalAttributes = attributes;
     }
 
-    GetMesh(name = 'New Mesh', updatable = false, options = null){
+    GetMesh(name = 'New Mesh', updatable = false, options = {}){
         let mesh = new Mesh(name, Game.Scene);
 
         if (options.hasOwnProperty('ComputeNormals') && (options.ComputeNormals)){
@@ -49,7 +49,13 @@ export class ClayMesh {
             vertexData.colors = this.Colors;
         }
 
-        vertexData.applyToMesh(mesh, updatable);
+        console.log(this);
+        console.log(vertexData);
+
+        vertexData.applyToMesh(mesh);
+        mesh.isPickable = false;
+
+        console.log(mesh);
 
         return mesh;
     }

@@ -44,7 +44,6 @@ export class CreateLoginView extends AppStateView{
         console.log(this.loginScreen);
         console.log(this.loadGameScreen);
 
-
         callback();
     }
 

@@ -1,13 +1,14 @@
-import {Body} from "../../../_Engine/_Gameplay/_Body/Body";
-import {ArcRotateCamera, Mesh} from 'babylonjs';
+
+
 import {Game} from "../../../_Game/Game";
-import {VisualMatter} from "../../../_Engine/_Gameplay/_Body/_Parts/VisualMatter";
-import {MeshBuilder} from "babylonjs";
+import {SceneObject} from "../../../_Engine/_Gameplay/_Characters/_Body/_Parts/SceneObject";
+import {ArcRotateCamera, Mesh, MeshBuilder} from "@babylonjs/core";
+import {Body} from "../../../_Engine/_Gameplay/_Characters/_Body/Body";
 
 export class BodyFactory {
     static CreateGeneric(name, mesh = null){
         let body = new Body();
-        let visualMatter = new VisualMatter((mesh instanceof Mesh) ? mesh : new Mesh(name, Game.Scene));
+        let visualMatter = new SceneObject((mesh instanceof Mesh) ? mesh : new Mesh(name, Game.Scene));
         body.AddPart(visualMatter);
     }
 
@@ -25,6 +26,13 @@ export class BodyFactory {
     }
 
     static CreateCamera() {
-        let camera = new ArcRotateCamera()
+        //let camera = new ArcRotateCamera();
+    }
+
+    static CreateWithParts(name, parts){
+        let body = this.CreateGeneric(name);
+        parts.forEach((part) => {
+            body.AddPart(part);
+        })
     }
 }

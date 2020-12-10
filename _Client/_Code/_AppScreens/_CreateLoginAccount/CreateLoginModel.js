@@ -6,9 +6,8 @@ export class CreateLoginModel extends AppStateModel{
         super();
     }
 
-    LoadGame(){
-        console.log("Loading Game");
-        GameStateFlow.ToGame();
+    ToMenu(){
+        GameStateFlow.ToMenu();
     }
 
     Login(account, password, error, callback) {

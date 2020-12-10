@@ -9,10 +9,10 @@ export class GameBuilder {
     }
 
     static StartEngine(){
-        Game.Canvas = document.getElementById('GameCanvas');
-        //Game.Canvas = document.createElement('canvas');
-        //Game.Canvas.id = 'GameCanvas';
-        //document.body.append(Game.Canvas);
+        //Game.Canvas = document.getElementById('GameCanvas');
+        Game.Canvas = document.createElement('canvas');
+        Game.Canvas.id = 'GameCanvas';
+        document.body.append(Game.Canvas);
         Game.Engine = new Engine(Game.Canvas, false);
         //Game.Renderer = new Renderer();
         //Game.Renderer.Start();
@@ -21,5 +21,7 @@ export class GameBuilder {
     static DestroyGame(){
         Game.AppController = null;
         Game.Canvas = null;
+        Game.Engine.stopRenderLoop();
+        Game.Engine = null;
     }
 }
