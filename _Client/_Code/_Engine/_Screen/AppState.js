@@ -1,6 +1,6 @@
 export class AppState {
     constructor(model, view) {
-        console.log(model);
+        //console.log(model);
         this.Model = model;
         this.View = view;
     }

@@ -3,6 +3,7 @@ import {MainScreen} from "./_Screens/MainScreen";
 import {CreateAccountScreen} from "./_Screens/CreateAccountScreen";
 import {LoginScreen} from "./_Screens/LoginScreen";
 import {LoadGameScreen} from "./_Screens/LoadGameScreen";
+import $ from 'jquery';
 
 export class CreateLoginView extends AppStateView{
     constructor() {
@@ -39,10 +40,10 @@ export class CreateLoginView extends AppStateView{
         this.screenHolder.append(this.loadGameScreen.containerElement);
         this.loadGameScreen.containerElement.hide();
 
-        console.log(this.mainScreen);
-        console.log(this.createAccountScreen);
-        console.log(this.loginScreen);
-        console.log(this.loadGameScreen);
+        //console.log(this.mainScreen);
+        //console.log(this.createAccountScreen);
+        //console.log(this.loginScreen);
+        //console.log(this.loadGameScreen);
 
         callback();
     }

@@ -8,6 +8,8 @@ import {PlayModel} from "../_AppScreens/_Play/PlayModel";
 import {PlayView} from "../_AppScreens/_Play/PlayView";
 import {LoadModel} from "../_AppScreens/_Load/LoadModel";
 import {LoadView} from "../_AppScreens/_Load/LoadView";
+import {EditorView} from "../_AppScreens/_Editor/EditorView";
+import {EditorModel} from "../_AppScreens/_Editor/EditorModel";
 
 export class GameStateFlow {
     static ToLoginCreateAccountPage(){
@@ -34,5 +36,11 @@ export class GameStateFlow {
         Game.AppController.SwitchToState(new AppState(model, view));
         //let appState = new AppState(model, view);
         //this.LoadState(appState);
+    }
+
+    static ToEditor(){
+        let model = new EditorModel();
+        let view = new EditorView();
+        Game.AppController.SwitchToState(new AppState(model, view));
     }
 }

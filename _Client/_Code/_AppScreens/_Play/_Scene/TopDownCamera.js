@@ -1,6 +1,16 @@
-import {Part} from "../../../_Engine/_Gameplay/_Body/Part";
-import {ArcRotateCamera, Camera, Vector3} from "@babylonjs/core";
+
+import {
+    ArcFollowCamera,
+    ArcRotateCamera,
+    Camera, Mesh,
+    MeshBuilder,
+    StandardMaterial,
+    Texture,
+    Vector3
+} from "@babylonjs/core";
 import {Game} from "../../../_Game/Game";
+import {Part} from "../../../_Engine/_Gameplay/_Characters/_Body/Part";
+import {Realm} from "../../../_Engine/_Gameplay/_Anava/_Realm/Realm";
 
 export class TopDownCamera extends Part {
     constructor(body) {
@@ -10,7 +20,21 @@ export class TopDownCamera extends Part {
     }
 
     Begin() {
-        let camera = new ArcRotateCamera('Camera', 0, 0, 10, new Vector3(0,0,0), Game.Scene);
+        //let cube = MeshBuilder.CreateBox('TestBox', {size: 1});
+        let cube = new Mesh('CameraTarget', Game.Scene);
+        cube.position = new Vector3(10, 0, 10);
+
+        let camera = new ArcFollowCamera('Camera', 0,0.5 * Math.PI,10, cube, Game.Scene);
+
+        this.CameraBase = camera;
+        this.TargetBase = cube;
+
+        let material = new StandardMaterial('GroundMaterial', Game.Scene);
+        material.diffuseTexture = new Texture('images/PolarHamletGem.png', Game.Scene);
+        this.TargetBase.material = material;
+        Realm.AddToUpdate(this);
+
+        /*let camera = new ArcRotateCamera('Camera', 0, 0.5 * Math.PI, 10, new Vector3(0,0,0), Game.Scene);
 
         camera.mode = Camera.ORTHOGRAPHIC_CAMERA;
         camera.orthoLeft = 5;
@@ -31,11 +55,19 @@ export class TopDownCamera extends Part {
         camera.angularSensibilityY = 500;
 
         this.CameraBase = camera;
+
+        console.log(this.CameraBase);*/
     }
 
     Update(){
-        if (this.Target !== null){
-            this.CameraBase.target = this.Target.Position;
+        if (this.Target !== null && this.Target !== undefined){
+            this.TargetBase.position = this.Target.Mesh.position;
         }
+
+        this.CameraBase.target = this.TargetBase.position;
+    }
+
+    End() {
+        Realm.RemoveFromUpdate(this);
     }
 }

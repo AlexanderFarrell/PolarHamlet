@@ -1,3 +1,4 @@
+const {contentSecurityPolicy} = require("helmet");
 exports.load = function load(app){
     console.log(" - Loading Security...");
     const helmet = require('helmet');

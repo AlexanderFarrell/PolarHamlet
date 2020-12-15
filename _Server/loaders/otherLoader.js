@@ -20,6 +20,14 @@ exports.load = function load(app){
     app.use(express.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(express.static(path.join(__dirname, '/../../_Client/_Public')));
+    app.set('views', path.join(__dirname, '/../../_Client/_Public/views'))
+    app.set('view engine', 'ejs');
+    app.use(function (req, res, next){
+        res.setHeader('Content-Security-Policy',
+            "default-src 'self'; font-src https://fonts.googleapis.com 'self'; img-src 'self'; " +
+            "script-src ''strict-dynamic' 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js' 'self'; style-src https://fonts.googleapis.com 'self'; frame-src 'self';")
+        next();
+    })
 
     console.log("    - Vital Processes On!");
 }

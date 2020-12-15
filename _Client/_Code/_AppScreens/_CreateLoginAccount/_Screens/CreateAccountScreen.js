@@ -1,6 +1,7 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
 import {Game} from "../../../_Game/Game";
 import {doc} from "prettier";
+import $ from 'jquery';
 
 export class CreateAccountScreen extends UiContainer{
     constructor(ToMenu, ToGameMethod) {
@@ -21,8 +22,9 @@ export class CreateAccountScreen extends UiContainer{
 
         this.createAccountButton.click(function (){
             document.getElementById('CreateLabel').innerHTML = "Creating Account...";
+            let username = $('#AccountNameInput').val();
             Game.AppController.Active.Model.Create(
-                $('#AccountNameInput').val(),
+                username,
                 $('#AccountPasswordInput').val(),
                 $('#AccountPasswordInputTwice').val(),
                 (error) => {
@@ -32,9 +34,10 @@ export class CreateAccountScreen extends UiContainer{
             }, (data) => {
                 $('#CreateAccountScreen').hide();
                 $('#LoadGameScreen').show();
+                Game.GameAccount.Username = username;
                 document.getElementById('StartTitle').innerText = "Starting Game";
                 document.getElementById('LoadLabel').innerHTML = "Your account has been created!";
-                    Game.AppController.Active.Model.ToMenu();
+                Game.AppController.Active.Model.ToMenu();
 
             });
         });
@@ -43,7 +46,6 @@ export class CreateAccountScreen extends UiContainer{
             $('#MainScreen').show();
             //$('#StartTitle').innerHTML = "Polar Hamlet";
             document.getElementById('StartTitle').innerText = "Polar Hamlet";
-            Game.AppController.Active.Model.ToMenu();
         })
 
         this.containerElement.append(this.form);

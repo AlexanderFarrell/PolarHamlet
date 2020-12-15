@@ -1,0 +1,15 @@
+.EditorButton {
+    position: absolute;
+    text-align: center;
+    background-color: rgb(79, 150, 161);
+    height: 15%;
+    padding: 5px;
+    margin: 5px;
+    font-size: 4vmin;
+    cursor: pointer;
+}
+
+#EditorMenu {
+    position: fixed;
+
+}

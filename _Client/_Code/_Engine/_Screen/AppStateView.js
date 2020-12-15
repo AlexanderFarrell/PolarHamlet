@@ -1,4 +1,5 @@
 const {ParameterError} = require("../_Exceptions/ParameterError");
+import $ from 'jquery';
 
 export class AppStateView {
     constructor() {

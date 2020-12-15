@@ -23,12 +23,13 @@ export class AppController {
                     }, () => {
                         this.Active = this.Next;
                         this.Next.Begin();
+                        this.Next = null;
                     });
                 } else {
                     this.Active = this.Next;
                     this.Next.Begin();
+                    this.Next = null;
                 }
-
             });
         } else {
             throw new ParameterError("SwitchToString", 'screen', 'AppScreen', state);

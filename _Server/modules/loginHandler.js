@@ -6,7 +6,7 @@ function create(req, res, success, error, shouldLoginOnCreate=true) {
     let username = req.bodyString('username');
     let password = req.bodyString('password');
 
-    console.log("Request came in to create account. User " + username + ", Pass: " + password);
+    console.log("Request came in to create account. User " + username /*+ ", Pass: " + password*/);
 
     console.log("Checking Username");
 

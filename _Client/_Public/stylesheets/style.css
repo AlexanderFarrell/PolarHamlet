@@ -11,6 +11,8 @@ body {
   background-color: black;
   color: aliceblue;
   font-family: 'Texturina', serif;
+  width: 100%;
+  height: 100%;
 }
 
 a {

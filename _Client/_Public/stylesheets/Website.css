@@ -52,9 +52,14 @@ h3 {
     position: absolute;
     background-color: #285a5a;
     width: 30vmin;
-    top: 30vmin;
+    bottom: 5vmin;
     right: 5vmin;
     height: 30vmin;
+}
+
+#PlayButton:hover {
+    background-color: #3a8787;
+    cursor: pointer;
 }
 
 #NewsTitle {

@@ -40,3 +40,7 @@ function loadScript(scriptOrder, callback){
     callback();
 }
 
+document.addEventListener('DOMContentLoaded', function (){
+    load();
+})
+

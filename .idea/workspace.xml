@@ -3,62 +3,120 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:heroku" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ee9e8381-9173-4500-92ad-e9303d4eea8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/TopDownCamera.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Adjective.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Dictionary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Noun.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Setting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Verb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/Realm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/World.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/AmbianceHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/LocationHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Setting/TimeHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Verb/VerbContinuous.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Verb/VerbInstant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/PhysicalMatter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/Mind.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Spirit/Spirit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/Website.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_Client/_Public/views/game.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Editor/EditorModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Editor/EditorView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Editor/_UI/EditorMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/LoadGameMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/LoginDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/NewGameMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/SettingsMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/Sprite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/_Departments/EditorCameraControl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/_Departments/Player.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/InputManager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ComponentController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/Department.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/MindFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Spirit/SpiritFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameAccount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/editor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/api-router/world.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/modules/worldEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_Server/modules/worldService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Polar Hamlet.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/CreateLoginView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/CreateAccountScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoadGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoadGameScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_CreateLoginAccount/_Screens/MainScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/MenuView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/MainMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/PlayModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletWorld.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletWorld.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/BodyFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/BodyFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/Region.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/Region.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/TopDownCamera.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_Scene/TopDownCamera.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/TileMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/TileMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ClayMesh.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_DataStructures/ClayMesh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/Part.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Part.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/PhysicalMatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Menu/_Screens/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/UpdateHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/UpdateHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Body/_Parts/VisualMatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/SceneObject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Mind/Mind.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Spirit/Spirit.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletWorld.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/Setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/Realm.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/Realm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/World.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Anava/_Realm/World.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/SceneObject.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Body/_Parts/SceneObject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/Mind.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Mind/Mind.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Spirit/Spirit.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Gameplay/_Characters/_Spirit/Spirit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Engine/_Screen/AppStateView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameBuilder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_Client/_Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Code/_Game/GameStateFlow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/loadStart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/javascripts/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/Website.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/Website.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/stylesheets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Client/_Public/views/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/_Client/_Public/views/game.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/api-router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/api-router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/otherLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/loaders/securityLoader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/modules/database-manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/modules/database-manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_Server/modules/loginHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/_Server/modules/loginHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="GLSL Shader" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Alexander Farrell" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lB4C02JfCSv9AFc98OGmfTWk0D" />
@@ -79,27 +137,27 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.12" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/_Client/_Code/_ExternalLibraryNonNpm" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs.jest.jest_package" value="" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\MorphSight\Desktop\Polar Hamlet\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MorphSight\Desktop\Temp\Polar Hamlet\_Client\_Code\_AppScreens\_Play\_Scene\_Departments" />
+      <recent name="C:\Users\MorphSight\Desktop\Temp\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Characters\_Body" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public\views" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Public" />
+      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Anava\_Setting" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_ExternalLibraryNonNpm" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Anava\_Setting" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Anava" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Legacy\_Parts" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Legacy" />
-      <recent name="C:\Users\MorphSight\Desktop\Polar Hamlet\_Client\_Code\_Engine\_Gameplay\_Spirit" />
     </key>
   </component>
   <component name="RunManager" selected="npm.pack_client">
@@ -111,6 +169,19 @@
       <envs />
       <scope-kind value="TEST_FILE" />
       <test-file value="$PROJECT_DIR$/_Dev/tests/error.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="component.test.js" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/_Dev/tests/component.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
     <configuration name="Run Game Server - Dev" type="NodeJSConfigurationType" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/_Server">
@@ -128,8 +199,6 @@
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <envs />
       <method v="2" />
     </configuration>
     <configuration name="Build Single JS File WebPack" type="js.build_tools.npm">
@@ -163,7 +232,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.localhost:3000" />
       <item itemvalue="Jest.Run Unit Tests - Jest" />
+      <item itemvalue="Jest.component.test.js" />
       <item itemvalue="Node.js.Run Game Server - Dev" />
       <item itemvalue="npm.pack_client" />
       <item itemvalue="npm.Build Single JS File WebPack" />
@@ -172,6 +243,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
+        <item itemvalue="Jest.component.test.js" />
         <item itemvalue="Jest.Run Unit Tests - Jest" />
       </list>
     </recent_temporary>
@@ -197,7 +270,15 @@
       <workItem from="1607480663794" duration="3232000" />
       <workItem from="1607535030902" duration="1147000" />
       <workItem from="1607543169396" duration="2831000" />
-      <workItem from="1607546047733" duration="20228000" />
+      <workItem from="1607546047733" duration="23351000" />
+      <workItem from="1607631101625" duration="1976000" />
+      <workItem from="1607644916247" duration="560000" />
+      <workItem from="1607645491309" duration="40000" />
+      <workItem from="1607728293330" duration="10539000" />
+      <workItem from="1607745550177" duration="9345000" />
+      <workItem from="1607807234314" duration="10590000" />
+      <workItem from="1607896978044" duration="10000" />
+      <workItem from="1607983517381" duration="11952000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit New Version">
       <created>1607214281083</created>
@@ -283,11 +364,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607550868102</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Starting to Build Site">
+      <created>1607569677004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607569677004</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -314,7 +405,172 @@
     <MESSAGE value="Autofill for username and pass creation and login now working on Chrome." />
     <MESSAGE value="Before Refactoring Renderer.&#10;&#10;Added OpenGL engine as well as some game logic stuff." />
     <MESSAGE value="Renders when creating!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renders when creating!" />
+    <MESSAGE value="Starting to Build Site" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to Build Site" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="93" y="93" width="2375" height="1215" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1607809902054">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="93" y="93" width="2375" height="1215" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607809902054" />
+    <state x="1021" y="318" key="#com.intellij.ide.util.MemberChooser" timestamp="1607994750298">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1021" y="318" key="#com.intellij.ide.util.MemberChooser/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607994750298" />
+    <state x="766" y="236" key="#com.intellij.ide.util.MemberChooser/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748143425" />
+    <state x="1021" y="318" key="#com.intellij.ide.util.MemberChooser/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607812205331" />
+    <state width="1001" height="466" key="DebuggerActiveHint" timestamp="1607994191098">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1001" height="466" key="DebuggerActiveHint/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607994191098" />
+    <state width="1259" height="400" key="GridCell.Tab.0.bottom" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.0.bottom/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="282" key="GridCell.Tab.0.bottom/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748785938" />
+    <state width="1258" height="296" key="GridCell.Tab.0.bottom/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607814263295" />
+    <state width="1259" height="400" key="GridCell.Tab.0.center" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.0.center/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="282" key="GridCell.Tab.0.center/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748785938" />
+    <state width="1258" height="296" key="GridCell.Tab.0.center/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607814263295" />
+    <state width="1259" height="400" key="GridCell.Tab.0.left" timestamp="1607998313391">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.0.left/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313391" />
+    <state width="1878" height="282" key="GridCell.Tab.0.left/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748785938" />
+    <state width="1258" height="296" key="GridCell.Tab.0.left/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607814263295" />
+    <state width="1259" height="400" key="GridCell.Tab.0.right" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.0.right/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="282" key="GridCell.Tab.0.right/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748785938" />
+    <state width="1258" height="296" key="GridCell.Tab.0.right/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607814263295" />
+    <state width="1259" height="400" key="GridCell.Tab.1.bottom" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.1.bottom/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.1.bottom/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.1.bottom/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.1.center" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.1.center/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.1.center/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715092" />
+    <state width="2517" height="400" key="GridCell.Tab.1.center/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.1.left" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.1.left/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.1.left/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715092" />
+    <state width="2517" height="400" key="GridCell.Tab.1.left/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.1.right" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.1.right/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.1.right/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.1.right/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.2.bottom" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.2.bottom/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.2.bottom/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.2.bottom/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.2.center" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.2.center/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.2.center/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.2.center/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.2.left" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.2.left/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.2.left/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.2.left/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1259" height="400" key="GridCell.Tab.2.right" timestamp="1607998313392">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="400" key="GridCell.Tab.2.right/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607998313392" />
+    <state width="1878" height="317" key="GridCell.Tab.2.right/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748715093" />
+    <state width="2517" height="400" key="GridCell.Tab.2.right/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810858755" />
+    <state width="1258" height="316" key="GridCell.Tab.3.bottom" timestamp="1607810689409">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1878" height="317" key="GridCell.Tab.3.bottom/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748692609" />
+    <state width="1258" height="316" key="GridCell.Tab.3.bottom/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810689409" />
+    <state width="1258" height="316" key="GridCell.Tab.3.center" timestamp="1607810689409">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1878" height="317" key="GridCell.Tab.3.center/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748692609" />
+    <state width="1258" height="316" key="GridCell.Tab.3.center/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810689409" />
+    <state width="1258" height="316" key="GridCell.Tab.3.left" timestamp="1607810689409">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1878" height="317" key="GridCell.Tab.3.left/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748692609" />
+    <state width="1258" height="316" key="GridCell.Tab.3.left/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810689409" />
+    <state width="1258" height="316" key="GridCell.Tab.3.right" timestamp="1607810689409">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1878" height="317" key="GridCell.Tab.3.right/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748692609" />
+    <state width="1258" height="316" key="GridCell.Tab.3.right/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607810689409" />
+    <state x="782" y="345" key="SettingsEditor" timestamp="1607991248080">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="782" y="345" key="SettingsEditor/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607991248080" />
+    <state x="834" y="429" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1607817099652">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="834" y="429" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607817099652" />
+    <state x="-1920" y="1072" width="1111" height="670" maximized="true" key="dock-window-1" timestamp="1607984560648">
+      <screen x="-1920" y="1072" width="1097" height="583" />
+    </state>
+    <state x="-1920" y="1072" width="1111" height="670" maximized="true" key="dock-window-1/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607984560648" />
+    <state x="-1521" y="1052" width="1425" height="720" maximized="true" key="dock-window-1/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607737525972" />
+    <state x="-2026" y="1058" width="1936" height="1045" maximized="true" key="dock-window-1/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607808241441" />
+    <state x="-2012" y="1059" width="1111" height="670" maximized="true" key="dock-window-2" timestamp="1607996842941">
+      <screen x="-1920" y="1072" width="1097" height="583" />
+    </state>
+    <state x="-2012" y="1059" width="1111" height="670" maximized="true" key="dock-window-2/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607996842941" />
+    <state x="-1571" y="1053" width="1425" height="720" key="dock-window-2/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607745876109" />
+    <state x="839" y="312" width="896" height="913" key="search.everywhere.popup" timestamp="1607996722170">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="839" y="312" width="896" height="913" key="search.everywhere.popup/-1920.1072.1097.583/0.0.2560.1400@0.0.2560.1400" timestamp="1607996722170" />
+    <state x="629" y="232" width="672" height="678" key="search.everywhere.popup/-1920.1072.1920.1000/0.0.1920.1040@0.0.1920.1040" timestamp="1607748911473" />
+    <state x="839" y="312" width="896" height="913" key="search.everywhere.popup/-1920.1072.1920.1020/0.0.2560.1400@0.0.2560.1400" timestamp="1607807922889" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js</url>
+          <line>36</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js</url>
+          <line>37</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js</url>
+          <line>38</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="javascript">
+          <url>file://$PROJECT_DIR$/_Client/_Code/_AppScreens/_Play/_GameSession/PolarHamletSetting.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

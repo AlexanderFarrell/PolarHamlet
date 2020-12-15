@@ -1,5 +1,6 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
 import {Game} from "../../../_Game/Game";
+import $ from 'jquery';
 
 export class LoginScreen extends UiContainer{
     constructor(toMainMenu, toLoadGame) {
@@ -21,8 +22,9 @@ export class LoginScreen extends UiContainer{
         this.loginAccountButton.click(function (){
             //$('#LoginLabel').innerHTML = "Logging in...";
             document.getElementById('LoginLabel').innerText = "Logging in...";
+            let username = $('#AccountNameInputLogin').val();
             Game.AppController.Active.Model.Login(
-                $('#AccountNameInputLogin').val(),
+                username,
                 $('#AccountPasswordInputLogin').val(),
                 (error) => {
                     //$('#LoginLabel').innerText = error;
@@ -31,6 +33,7 @@ export class LoginScreen extends UiContainer{
                 $('#LoginAccountScreen').hide();
                 $('#LoadGameScreen').show();
                 $('#StartTitle').innerHTML = "Starting Game";
+                Game.GameAccount.Username = username;
                     document.getElementById('StartTitle').innerText = "Starting Game";
                     document.getElementById('LoadLabel').innerHTML = "Successfully logged in!";
                     Game.AppController.Active.Model.ToMenu();

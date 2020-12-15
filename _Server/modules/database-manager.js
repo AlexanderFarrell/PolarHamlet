@@ -65,10 +65,13 @@ function runQuery(client, sql, callback, parameters = null){
     }
 }
 
-exports.dataQuery = function query(sql, error, callback, parameters = null){
+exports.singleQuery = function query(sql, error, callback, parameters = null){
     connectExecuteAndDisconnect(error, runQuery, callback, sql, parameters);
 }
 
+exports.runQuery = runQuery;
+exports.connect = connect;
+exports.disconnect = disconnect;
 /*exports.formatRowToStrings = function (data){
     var retVal = [];
     data.rows.forEach(function (item){

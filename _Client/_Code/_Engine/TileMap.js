@@ -1,18 +1,19 @@
 import {ClayMesh} from "./_DataStructures/ClayMesh";
 import {StandardMaterial, Vector2, Vector3} from "@babylonjs/core";
 import {Game} from "../_Game/Game";
+import {Part} from "./_Gameplay/_Characters/_Body/Part";
 
-export class TileMap {
+export class TileMap extends Part {
     constructor(width, height) {
-        let options = {
-            width: width,
-            height: height
-        }
-
-        this.Generate(options);
+        super();
     }
 
-    Generate(options){
+    Generate(){
+        let options = {
+            width: 64,
+            height: 64
+        }
+
         this.ClayMesh = new ClayMesh(['Normals', 'UV']);
 
         let vertexOffset = 0;
@@ -61,9 +62,9 @@ export class TileMap {
             }
         }
 
-        this.Mesh = this.ClayMesh.GetMesh('TileMap', true);
+        this.Body.Mesh = this.ClayMesh.GetMesh('TileMap', true);
         let material = new StandardMaterial('tiles', Game.Scene);
         material.wireframe = true;
-        this.Mesh.material = material;
+        this.Body.Mesh.material = material;
     }
 }

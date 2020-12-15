@@ -1,4 +1,5 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
+import $ from 'jquery';
 
 export class LoadGameScreen extends UiContainer{
     constructor() {

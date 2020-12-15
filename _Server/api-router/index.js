@@ -6,7 +6,21 @@ const login = require('../modules/loginHandler');
 router.get('/', function(req, res, next) {
 
   //res.render('index', { title: 'Express' });
-  res.sendFile('_Client/index.html', {root: __dirname + '/../../'});
+    res.render('index', {root: __dirname + '/../../_Client/_Public'});
+});
+
+router.get('/game', function(req, res, next) {
+    //res.render('index', { title: 'Express' });
+    res.sendFile('javascripts/main.js', {root: __dirname + '/../../_Client/_Public'});
+});
+
+/* GET home page. */
+router.get('/play', function(req, res, next) {
+
+    //res.render('index', { title: 'Express' });
+    //res.sendFile('game.ejs', {root: __dirname + '/../../'});
+    //res.sendFile('game.ejs', {root: __dirname + '/../../_Client/_Public'});
+    res.render('game', {root: __dirname + '/../../_Client/_Public'});
 });
 
 /* GET home page. */
@@ -17,7 +31,7 @@ router.post('/create', function(req, res, next) {
 
   res.setHeader('Content-Type', 'application/json');
   //res.render('index', { title: 'Express' });
-  //res.sendFile('_Client/index.html', {root: __dirname + '/../../'});
+  //res.sendFile('_Client/index.ejs', {root: __dirname + '/../../'});
   login.create(
       req,
       res,
@@ -37,7 +51,7 @@ router.post('/login', function(req, res, next) {
 
   res.setHeader('Content-Type', 'application/json');
   //res.render('index', { title: 'Express' });
-  //res.sendFile('_Client/index.html', {root: __dirname + '/../../'});
+  //res.sendFile('_Client/index.ejs', {root: __dirname + '/../../'});
   login.login(
       req,
       res,

@@ -1,5 +1,6 @@
 import {AppStateModel} from "../../_Engine/_Screen/AppStateModel";
 import {GameStateFlow} from "../../_Game/GameStateFlow";
+import $ from 'jquery';
 
 export class CreateLoginModel extends AppStateModel{
     constructor() {

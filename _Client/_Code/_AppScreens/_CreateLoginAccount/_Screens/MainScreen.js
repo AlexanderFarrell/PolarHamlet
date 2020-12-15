@@ -1,4 +1,5 @@
 import {UiContainer} from "../../../_Engine/_View/UiContainer";
+import $ from 'jquery';
 
 export class MainScreen extends UiContainer{
     constructor(toCreate, toLogin) {

@@ -15,22 +15,26 @@ export class Setting {
         this.Verbs = {};
     }
 
-    AddNoun(noun, nameID){
+    Update() {
+
+    }
+
+    AddNoun(noun, nameID) {
         this.Nouns[nameID] = noun;
     }
 
-    RemoveNoun(noun, nameID){
+    RemoveNoun(noun, nameID) {
         let i = this.Nouns.indexOf(noun);
         if (i !== -1){
             this.Nouns.splice(i, 1);
         }
     }
 
-    AddVerb(verb){
+    AddVerb(verb) {
         this.Verbs.push(verb);
     }
 
-    RemoveVerb(verb){
+    RemoveVerb(verb) {
         let i = this.Verbs.indexOf(verb);
         if (i !== -1){
             this.Verbs.splice(i, 1);
