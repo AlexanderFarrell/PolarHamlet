@@ -22,7 +22,7 @@ function create(req, res, success, error, shouldLoginOnCreate=true) {
     });
 
     function CheckUser(callback){
-        database.dataQuery("SELECT username from users where users.username = '" + username + "';", OnError, OnSuccess);
+        database.singleQuery("SELECT username from users where users.username = '" + username + "';", OnError, OnSuccess);
 
         function OnError(error){
             console.log(error);
@@ -53,7 +53,7 @@ function create(req, res, success, error, shouldLoginOnCreate=true) {
     }
 
     function Create(hash, callback){
-         database.dataQuery("INSERT INTO users(username, pass) values ('" + username + "', '" + hash +"');", OnError, OnSuccess);
+         database.singleQuery("INSERT INTO users(username, pass) values ('" + username + "', '" + hash +"');", OnError, OnSuccess);
 
          function OnError(e){
              console.log(e);
@@ -90,7 +90,7 @@ function login(req, res, success, error) {
 
     console.log(req.body.username);
 
-    database.dataQuery("SELECT username, pass from users where users.username = '" + username + "';", onErrorDatabaseGet, onSuccessDatabaseGet);
+    database.singleQuery("SELECT username, pass from users where users.username = '" + username + "';", onErrorDatabaseGet, onSuccessDatabaseGet);
 
     function onErrorDatabaseGet(data){
         console.error("Error getting data from database");

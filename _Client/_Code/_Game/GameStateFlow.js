@@ -1,15 +1,9 @@
 import {Game} from "./Game";
 import {AppState} from "../_Engine/_Screen/AppState";
-import {MenuModel} from "../_AppScreens/_Menu/MenuModel";
-import {MenuView} from "../_AppScreens/_Menu/MenuView";
 import {CreateLoginModel} from "../_AppScreens/_CreateLoginAccount/CreateLoginModel";
 import {CreateLoginView} from "../_AppScreens/_CreateLoginAccount/CreateLoginView";
 import {PlayModel} from "../_AppScreens/_Play/PlayModel";
 import {PlayView} from "../_AppScreens/_Play/PlayView";
-import {LoadModel} from "../_AppScreens/_Load/LoadModel";
-import {LoadView} from "../_AppScreens/_Load/LoadView";
-import {EditorView} from "../_AppScreens/_Editor/EditorView";
-import {EditorModel} from "../_AppScreens/_Editor/EditorModel";
 
 export class GameStateFlow {
     static ToLoginCreateAccountPage(){
@@ -18,7 +12,7 @@ export class GameStateFlow {
         Game.AppController.SwitchToState(new AppState(model, view));
     }
 
-    static ToMenu(){
+    /*static ToMenu(){
         let model = new MenuModel();
         let view = new MenuView();
         Game.AppController.SwitchToState(new AppState(model, view))
@@ -28,7 +22,7 @@ export class GameStateFlow {
         let model = new LoadModel();
         let view = new LoadView();
         Game.AppController.SwitchToState(new AppState(model, view));
-    }
+    }*/
 
     static ToGame(){
         let model = new PlayModel();
@@ -36,11 +30,5 @@ export class GameStateFlow {
         Game.AppController.SwitchToState(new AppState(model, view));
         //let appState = new AppState(model, view);
         //this.LoadState(appState);
-    }
-
-    static ToEditor(){
-        let model = new EditorModel();
-        let view = new EditorView();
-        Game.AppController.SwitchToState(new AppState(model, view));
     }
 }

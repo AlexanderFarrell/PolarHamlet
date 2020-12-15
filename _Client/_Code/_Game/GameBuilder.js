@@ -1,6 +1,6 @@
 import {AppController} from "../_Engine/_Screen/AppController";
-import {Engine} from '@babylonjs/core';
 import {GameAccount} from "./GameAccount";
+import {Graphics} from "../_Engine/_Graphics/Graphics";
 const {Game} = require("./Game");
 
 export class GameBuilder {
@@ -11,20 +11,15 @@ export class GameBuilder {
     }
 
     static StartEngine(){
-        //Game.Canvas = document.getElementById('GameCanvas');
-        Game.Canvas = document.createElement('canvas');
-        Game.Canvas.id = 'GameCanvas';
-        document.body.append(Game.Canvas);
-        Game.Engine = new Engine(Game.Canvas, false);
-        //Game.Renderer = new Renderer();
-        //Game.Renderer.Start();
+        Graphics.Start();
+    }
+
+    static EndEngine(){
+        Graphics.End();
     }
 
     static DestroyGame(){
-        Game.AppController = null;
-        Game.Canvas.remove();
-        Game.Canvas = null;
-        Game.Engine.stopRenderLoop();
-        Game.Engine = null;
+        delete Game.AppController;
+        delete Game.GameAccount;
     }
 }

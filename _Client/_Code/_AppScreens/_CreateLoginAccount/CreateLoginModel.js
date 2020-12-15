@@ -8,7 +8,8 @@ export class CreateLoginModel extends AppStateModel{
     }
 
     ToMenu(){
-        GameStateFlow.ToMenu();
+        //GameStateFlow.ToMenu();
+        GameStateFlow.ToGame();
     }
 
     Login(account, password, error, callback) {

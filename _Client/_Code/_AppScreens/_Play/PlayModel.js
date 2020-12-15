@@ -1,10 +1,7 @@
 import {AppStateModel} from "../../_Engine/_Screen/AppStateModel";
-import {Game} from "../../_Game/Game";
-import {TileMap} from "../../_Engine/TileMap";
 import {GameBuilder} from "../../_Game/GameBuilder";
-import {ArcFollowCamera, ArcRotateCamera, MeshBuilder, Scene, StandardMaterial, Texture, Vector3} from '@babylonjs/core'
-import {PolarHamletWorld} from "./_GameSession/PolarHamletWorld";
-import {Realm} from "../../_Engine/_Gameplay/_Anava/_Realm/Realm";
+import $ from 'jquery';
+import {Game} from "../../_Game/Game";
 
 export class PlayModel extends AppStateModel {
     constructor() {
@@ -12,51 +9,77 @@ export class PlayModel extends AppStateModel {
     }
 
     Load(error, callback) {
-        try {
-            GameBuilder.StartEngine();
-        } catch (e) {
-            error(e);
-            return;
-        }
-
-        Game.Scene = new Scene(Game.Engine);
-
-        Realm.SetWorld(new PolarHamletWorld('Debug'));
-        Realm.World.Create((error) => {
-            throw error;
-        }, () => {
-            callback();
-        });
-        //let camera = new ArcRotateCamera('Camera', 1, 1, 10, new Vector3(0,0,0), Game.Scene);
-        //camera.attachControl(Game.Canvas, true);*/
-
-        /*let cube = MeshBuilder.CreateBox('TestBox', {size: 1});
-        cube.position = new Vector3(10, 0, 10);
-
-        let camera = new ArcFollowCamera('Camera', 0,0.5 * Math.PI,10, cube, Game.Scene);
-
-        let material = new StandardMaterial('GroundMaterial', Game.Scene);
-        material.diffuseTexture = new Texture('images/PolarHamletGem.png', Game.Scene);
-
-        this.Map = new TileMap(64, 64);*/
-
-
-
-        //super.Load(error, callback);
+        GameBuilder.StartEngine();
+        $.ajax('/game/join', {
+            method: 'POST',
+            data: {game: 0},
+            success: function (data){
+                if (data.success){
+                    console.log(data);
+                    this.turn = data.turn;
+                    callback();
+                } else {
+                    error(data.message);
+                }
+            },
+            error: function (data) {
+                error("Error connecting to server");
+            }
+        })
     }
 
     Begin(error, callback) {
-        Game.Engine.runRenderLoop(this.Update)
+        this.UpdateLoop = setInterval(this.Update, 1000);
 
         callback();
     }
 
-    Update() {
-        Realm.Update();
+    async Update() {
+        if (!this.IsUpdating){
+            this.IsUpdating = true;
+            $.ajax('/game', {
+                method: 'GET',
+                data: {turn: this.turn},
+                success: function (data){
+                    if (data.success){
+                        console.log(data);
+                        this.turn = data.turn;
+                        this.IsUpdating = false;
+                    } else {
+                        GameBuilder.;
+                    }
+                },
+                error: function (data) {
+                    error("Error connecting to server");
+                }
+            })
+        }
+    }
 
-        Game.Scene.render();
+    End(error, callback) {
+        clearInterval(this.UpdateLoop);
+
+        $.ajax('/game/leave', {
+            method: 'POST',
+            data: {game: 0},
+            success: function (data){
+                if (data.success){
+                    console.log(data);
+                    this.turn = data.turn;
+                    callback();
+                } else {
+                    error(data.message);
+                }
+            },
+            error: function (data) {
+                error("Error connecting to server");
+            }
+        })
+
+        super.End(error, callback);
     }
 
     RenderLoop() {
+
     }
 }
