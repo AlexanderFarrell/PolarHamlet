@@ -1,7 +1,6 @@
 import {InputManager} from "../_Input/InputManager";
 import {ClientWorld} from "./ClientWorld";
 import {Position} from "./Position";
-import {cli} from "webpack";
 
 export class MouseMover {
     constructor() {
