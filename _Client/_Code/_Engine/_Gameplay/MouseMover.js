@@ -5,6 +5,7 @@ import {Position} from "./Position";
 export class MouseMover {
     constructor() {
         this.LastPosition = new Position(0.0,0.0);
+        this.Delta = new Position(0,0);
     }
 
     Update() {
@@ -16,14 +17,19 @@ export class MouseMover {
 
 
             if (InputManager.MousePressTime() > 50){
-                ClientWorld.Camera.Rectangle.Center.X -= (mouseWorldPos.X - this.LastPosition.X);
-                ClientWorld.Camera.Rectangle.Center.Y -= (mouseWorldPos.Y - this.LastPosition.Y);
+                this.Delta.X = -(mouseWorldPos.X - this.LastPosition.X);
+                this.Delta.Y = -(mouseWorldPos.Y - this.LastPosition.Y);
+                //ClientWorld.Camera.Rectangle.Center.X -= (mouseWorldPos.X - this.LastPosition.X);
+                //ClientWorld.Camera.Rectangle.Center.Y -= (mouseWorldPos.Y - this.LastPosition.Y);
                 this.LastPosition.X = mouseWorldPos.X;
                 this.LastPosition.Y = mouseWorldPos.Y;
             } else {
                 this.LastPosition.X = mouseWorldPos.X;
                 this.LastPosition.Y = mouseWorldPos.Y;
             }
+        } else {
+            this.Delta.X *= 0.9;
+            this.Delta.Y *= 0.9;
         }
 
         if (InputManager.Scroll !== ClientWorld.Camera.Scroll){
@@ -34,5 +40,8 @@ export class MouseMover {
             ClientWorld.Camera.Rectangle.Size.X = ClientWorld.Camera.BaseRectangle.Size.X * InputManager.Scroll;
             ClientWorld.Camera.Rectangle.Size.Y = ClientWorld.Camera.BaseRectangle.Size.Y * InputManager.Scroll;
         }
+
+        ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
+        ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
     }
 }
