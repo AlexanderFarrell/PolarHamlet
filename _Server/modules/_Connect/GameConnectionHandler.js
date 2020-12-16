@@ -1,4 +1,4 @@
-
+var redis = require('redis');
 const {Player} = require("../_Game/Player");
 
 class GameConnectionHandler {
@@ -7,7 +7,10 @@ class GameConnectionHandler {
         const io = require('socket.io')(server);
         const ioSession = require('express-socket.io-session');
         if (process.env.REDIS_URL){
-            io.adapter(require('socket.io-redis')({ host: 'localhost', port: 6379 }));
+            io.adapter(require('socket.io-redis')({
+                pubClient: redis.createClient(process.env.REDIS_URL, {return_buffers: true}),
+                subClient: redis.createClient(process.env.REDIS_URL, {return_buffers: true})
+            }));
         }
 
         let handler = this;

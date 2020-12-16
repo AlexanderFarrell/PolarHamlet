@@ -3,15 +3,18 @@ const session = require('express-session');
 //const MemcachedStore = require('connect-memjs')(session);
 //const redis = require('socket.io-redis')
 const RedisStore = require('connect-redis')(session);
+const url = require('url');
 
 function setupSessionsMemcache(app){
     if (process.env.REDIS_URL){
+        let rurl = url.parse(process.env.REDIS_URL);
         let session = require('express-session')({
             secret: process.env.sessionSecret,
             resave: false,
             saveUninitialized: false,
             store: new RedisStore({
-                url: process.env.REDIS_URL
+                url: process.env.REDIS_URL,
+                client: redis.createClient(process.env.REDIS_URL, {return_buffers: true})
             }),
             cookie: {
                 maxAge: 60 * 60 * 24 * 31 * 1000
