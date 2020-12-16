@@ -789,7 +789,7 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
             });
 
             _Game.Game.socket.on('notify-new-entity', function (entity) {
-              _ClientWorld.ClientWorld.Entities.add(new _Entity.Entity(entity.name, new _Rectangle.Rectangle(new _Position.Position(entity.x, entity.y), new _Position.Position(entity.width, entity.height)), new _ColorDrawer.ColorDrawer('green')));
+              _ClientWorld.ClientWorld.Entities.push(new _Entity.Entity(entity.name, new _Rectangle.Rectangle(new _Position.Position(entity.x, entity.y), new _Position.Position(entity.width, entity.height)), new _ColorDrawer.ColorDrawer('green')));
 
               console.log("New Entity " + JSON.stringify(entity));
             });
@@ -1076,6 +1076,7 @@ var MainButtons = /*#__PURE__*/function (_UiContainer) {
       this.cancel = (0, _jquery["default"])('<div id="CancelButton" class="EditorButton">Cancel</div>');
       this.cancel.click(function () {
         cancel.hide();
+        _MouseClicker.MouseClicker.Build = false;
       });
       var cancel = this.cancel;
       this.logout.click(function () {
@@ -1083,8 +1084,8 @@ var MainButtons = /*#__PURE__*/function (_UiContainer) {
       });
       this.house = (0, _jquery["default"])('<div id="BuildHouse" class="EditorButton">Build House</div>');
       this.house.click(function () {
-        cancel.toggle();
-        _MouseClicker.MouseClicker.Build = !_MouseClicker.MouseClicker.Build;
+        cancel.show();
+        _MouseClicker.MouseClicker.Build = true;
       });
       this.display = (0, _jquery["default"])('<div id="BarDisplay">Things</div>');
       this.buttonHolder = (0, _jquery["default"])('<div id="PlayButtons"></div>');
@@ -1266,7 +1267,11 @@ var ClientWorld = /*#__PURE__*/function () {
       ClientWorld.Tilemap = new TileMap(data);
       ClientWorld.MouseMover = new _MouseMover.MouseMover();
       ClientWorld.MouseClicker = new _MouseClicker.MouseClicker();
-      ClientWorld.Entities.push(new _Entity.Entity('Test', new _Rectangle.Rectangle(new _Position.Position(3.0, 3.0), new _Position.Position(1.0, 1.0)), new _ColorDrawer.ColorDrawer('red')));
+      data.world.Entities.forEach(function (entity) {
+        ClientWorld.Entities.push(new _Entity.Entity(entity.name, new _Rectangle.Rectangle(new _Position.Position(entity.x, entity.y), new _Position.Position(entity.width, entity.height)), new _ColorDrawer.ColorDrawer(entity.color)));
+      });
+      console.log(ClientWorld.Entities); //ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(3.0,3.0), new Position(1.0,1.0)), new ColorDrawer('red')));
+
       ClientWorld.Loop = setInterval(function () {
         ClientWorld.ClientUpdate();
         ClientWorld.Draw();
@@ -1281,16 +1286,23 @@ var ClientWorld = /*#__PURE__*/function () {
   }, {
     key: "Create",
     value: function Create(entity) {
-      _Game.Game.socket.emit('new-entity', {
+      var arg = {
         name: entity.Name,
         bounds: {
           Center: {
-            x: entity.Bounds.Size.X,
-            y: entity.Bounds.Size.Y
+            X: entity.Bounds.Center.X,
+            Y: entity.Bounds.Center.Y
+          },
+          Size: {
+            X: entity.Bounds.Size.X,
+            Y: entity.Bounds.Size.Y
           }
         },
         color: 'red'
-      });
+      };
+      console.log(arg);
+
+      _Game.Game.socket.emit('new-entity', arg);
     }
   }, {
     key: "End",
@@ -1540,9 +1552,14 @@ var MouseClicker = /*#__PURE__*/function () {
         if (MouseClicker.Build && _InputManager.InputManager.Mousedown) {
           var mouseWorldPos = _ClientWorld.ClientWorld.Camera.InverseTransformPos(_InputManager.InputManager.MousePosition);
 
+          mouseWorldPos.X += _ClientWorld.ClientWorld.Camera.Rectangle.TopLeft().X;
+          mouseWorldPos.Y += _ClientWorld.ClientWorld.Camera.Rectangle.TopLeft().Y;
+
           _ClientWorld.ClientWorld.Create(new _Entity.Entity('House', new _Rectangle.Rectangle(mouseWorldPos, new _Position.Position(0.3, 0.3)), new _ColorDrawer.ColorDrawer('green')));
         }
       }
+
+      this.LastState = _InputManager.InputManager.Mousedown;
     }
   }]);
 

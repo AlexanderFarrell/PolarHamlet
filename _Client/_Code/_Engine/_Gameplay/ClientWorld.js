@@ -73,7 +73,13 @@ export class ClientWorld {
         ClientWorld.MouseMover = new MouseMover();
         ClientWorld.MouseClicker = new MouseClicker();
 
-        ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(3.0,3.0), new Position(1.0,1.0)), new ColorDrawer('red')));
+        data.world.Entities.forEach((entity) => {
+            ClientWorld.Entities.push(new Entity(entity.name, new Rectangle(new Position(entity.x, entity.y), new Position(entity.width, entity.height)), new ColorDrawer(entity.color)));
+        })
+
+        console.log(ClientWorld.Entities);
+
+        //ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(3.0,3.0), new Position(1.0,1.0)), new ColorDrawer('red')));
 
         ClientWorld.Loop = setInterval(() => {
             ClientWorld.ClientUpdate();
@@ -87,7 +93,9 @@ export class ClientWorld {
     }
 
     static Create(entity){
-        Game.socket.emit('new-entity', {name: entity.Name, bounds: {Center: {x: entity.Bounds.Size.X, y: entity.Bounds.Size.Y}}, color: 'red'});
+        let arg = {name: entity.Name, bounds: {Center: {X: entity.Bounds.Center.X, Y: entity.Bounds.Center.Y}, Size: {X: entity.Bounds.Size.X, Y: entity.Bounds.Size.Y}}, color: 'red'};
+        console.log(arg);
+        Game.socket.emit('new-entity', arg);
     }
 
     static End(){

@@ -21,6 +21,7 @@ export class MainButtons extends UiContainer {
 
         this.cancel.click(function (){
             cancel.hide();
+            MouseClicker.Build = false;
         });
 
         let cancel = this.cancel;
@@ -32,8 +33,8 @@ export class MainButtons extends UiContainer {
         this.house = $('<div id="BuildHouse" class="EditorButton">Build House</div>');
 
         this.house.click(function (){
-            cancel.toggle();
-            MouseClicker.Build = !MouseClicker.Build;
+            cancel.show();
+            MouseClicker.Build = true;
         });
 
         this.display = $('<div id="BarDisplay">Things</div>');

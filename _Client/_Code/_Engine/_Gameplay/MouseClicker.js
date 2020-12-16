@@ -15,8 +15,12 @@ export class MouseClicker {
         if (InputManager.Mousedown !== this.LastState){
             if (MouseClicker.Build && InputManager.Mousedown){
                 let mouseWorldPos = ClientWorld.Camera.InverseTransformPos(InputManager.MousePosition);
+                mouseWorldPos.X += ClientWorld.Camera.Rectangle.TopLeft().X;
+                mouseWorldPos.Y += ClientWorld.Camera.Rectangle.TopLeft().Y;
                 ClientWorld.Create(new Entity('House', new Rectangle(mouseWorldPos, new Position(0.3, 0.3)), new ColorDrawer('green')));
             }
         }
+
+        this.LastState = InputManager.Mousedown;
     }
 }

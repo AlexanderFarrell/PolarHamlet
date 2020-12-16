@@ -51,7 +51,7 @@ export class PlayModel extends AppStateModel {
                         document.getElementById('BarDisplay').innerText = Game.PlayerData + "        " + Game.CurrentAction;
                     })
                     Game.socket.on('notify-new-entity', (entity) => {
-                        ClientWorld.Entities.add(new Entity(entity.name, new Rectangle(new Position(entity.x, entity.y), new Position(entity.width, entity.height)), new ColorDrawer('green')));
+                        ClientWorld.Entities.push(new Entity(entity.name, new Rectangle(new Position(entity.x, entity.y), new Position(entity.width, entity.height)), new ColorDrawer('green')));
                         console.log("New Entity " + JSON.stringify(entity));
                     })
                     /*Game.socket.on('init', (data) => {

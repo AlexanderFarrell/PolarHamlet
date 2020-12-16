@@ -30,7 +30,7 @@ class GameConnectionHandler {
             })
 
             socket.on('new-entity', (entity) => {
-                this.NewEntity(socket.handshake.session.username, entity);
+                this.NewEntity(socket.handshake.session.username, entity, app);
                 //console.log(socket.handshake.session.username + ': ' + JSON.stringify(moves))
             })
 
@@ -62,6 +62,7 @@ class GameConnectionHandler {
     }
 
     ServeNewEntity(entity){
+        console.log('Notifying of new entity');
         this.io.emit('notify-new-entity', entity);
     }
 }
