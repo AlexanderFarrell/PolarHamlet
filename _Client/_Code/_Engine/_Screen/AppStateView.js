@@ -17,6 +17,10 @@ export class AppStateView {
         })
     }
 
+    HandleTransitionError(error){
+
+    }
+
     RemoveUi(){
         this._gameViews.forEach((view) => {
             console.log(view);

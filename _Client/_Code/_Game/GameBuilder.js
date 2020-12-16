@@ -1,6 +1,7 @@
 import {AppController} from "../_Engine/_Screen/AppController";
 import {GameAccount} from "./GameAccount";
 import {Graphics} from "../_Engine/_Graphics/Graphics";
+import {InputManager} from "../_Engine/_Input/InputManager";
 const {Game} = require("./Game");
 
 export class GameBuilder {
@@ -12,9 +13,11 @@ export class GameBuilder {
 
     static StartEngine(){
         Graphics.Start();
+        InputManager.Begin();
     }
 
     static EndEngine(){
+        InputManager.End();
         Graphics.End();
     }
 

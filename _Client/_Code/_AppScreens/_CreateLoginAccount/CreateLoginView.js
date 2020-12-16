@@ -8,6 +8,7 @@ import $ from 'jquery';
 export class CreateLoginView extends AppStateView{
     constructor() {
         super();
+        this.loginCreate = 1;
     }
 
     Load(error, callback) {
@@ -46,6 +47,16 @@ export class CreateLoginView extends AppStateView{
         //console.log(this.loadGameScreen);
 
         callback();
+    }
+
+    HandleTransitionError(error) {
+        if (this.loginCreate === 1){
+            this.ToLoginScreen();
+            this.loginScreen.resultLabel = error;
+        } else {
+            this.ToCreateAccountScreen();
+            this.createAccountScreen.resultLabel = error;
+        }
     }
 
     Begin(error, callback) {

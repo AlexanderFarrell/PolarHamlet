@@ -14,7 +14,9 @@ export class AppController {
             this.IsTransitioning = true;
             this.Next.Load((error) => {
                 this.IsTransitioning = false;
-                throw error;
+                throw new Error(error);
+                //this.Next = undefined;
+                //this.Active.HandleTransitionError(error);
             }, () => {
                 this.IsTransitioning = false;
                 if (this.Active){

@@ -31,6 +31,10 @@ export class AppState {
         }
     }
 
+    HandleTransitionError(error){
+        this.View.HandleTransitionError(error);
+    }
+
     End(error, callback){
         console.log("End Called");
         this.Model.End(OnError, () => {

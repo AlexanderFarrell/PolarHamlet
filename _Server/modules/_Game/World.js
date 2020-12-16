@@ -1,3 +1,13 @@
+class TileType {
+
+}
+
+class Tile {
+    constructor() {
+        this.Resources = [];
+    }
+}
+
 class World {
     constructor() {
         this.Entities = [];
@@ -5,7 +15,13 @@ class World {
     }
 
     Generate(){
+        for (let x = 0; x < 300; x++){
+            this.Tiles[x].push([])
 
+            for (let y = 0; y < 300; y++){
+                this.Tiles[x][y] = new Tile();
+            }
+        }
     }
 
     Load(){
@@ -13,4 +29,4 @@ class World {
     }
 }
 
-module.exports = {World};
+module.exports = {World, Tile};

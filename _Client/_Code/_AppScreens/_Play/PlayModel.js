@@ -1,9 +1,8 @@
 import {AppStateModel} from "../../_Engine/_Screen/AppStateModel";
 import {GameBuilder} from "../../_Game/GameBuilder";
-import $ from 'jquery';
-import {Game} from "../../_Game/Game";
 
 import {io} from 'socket.io-client';
+import {ClientWorld} from "../../_Engine/_Gameplay/ClientWorld";
 
 export class PlayModel extends AppStateModel {
     constructor() {
@@ -11,10 +10,26 @@ export class PlayModel extends AppStateModel {
     }
 
     Load(error, callback) {
-        GameBuilder.StartEngine();
-        let socket = io();
+        this.socket = io();
 
-        let update = this.UpdateNetwork;
+        this.socket.on('connect', function (){
+            console.log("Connect")
+        })
+        this.socket.on('world', (data) => {
+            console.log(data.turn);
+        })
+        this.socket.on('init', (data) => {
+            console.log("init with " + JSON.stringify(data));
+        })
+        this.socket.on('disconnect', () => {
+            console.log("Disconnect");
+        })
+
+        this.socket.emit("test");
+
+        //setInterval(() => {this.Update();}, 500);
+
+        callback();
 
         /*this.io.on('connect', (socket) => {
             socket.on('authenticated', function (){
@@ -26,7 +41,6 @@ export class PlayModel extends AppStateModel {
             })
         })*/
 
-        setInterval(() => {update(socket);}, 500);
 
         /*$.ajax('/game/join', {
             method: 'POST',
@@ -44,20 +58,25 @@ export class PlayModel extends AppStateModel {
                 error("Error connecting to server");
             }
         })*/
+
+
     }
 
     Begin(error, callback) {
-        this.UpdateLoop = setInterval(this.Update, 500);
+        GameBuilder.StartEngine();
+        this.UpdateLoop = setInterval(() => {this.Update();}, 500);
+
+        ClientWorld.Begin();
+
 
         callback();
     }
 
-    UpdateNetwork(socket){
-        socket.emit('Player sending moves to server');
-    }
-
     Update() {
-        this.socket.emit('Player sending moves to server');
+        this.socket.emit('moves', {moves: 'This worked!'});
+
+        //this.socket.emit("test");
+        //this.socket.emit('Player sending moves to server');
         /*if (!this.IsUpdating){
             this.IsUpdating = true;
             $.ajax('/game', {
@@ -102,9 +121,5 @@ export class PlayModel extends AppStateModel {
         })*/
 
         super.End(error, callback);
-    }
-
-    RenderLoop() {
-
     }
 }

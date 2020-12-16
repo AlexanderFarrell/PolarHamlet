@@ -1,6 +1,6 @@
 const indexRouter = require('../api-router/index');
 const gameRouter = require('../api-router/game');
-const {ConnectionService} = require("../modules/_Connect/ConnectionService");
+const {ConnectionService} = require("../modules/_Connect/GameConnectionHandler");
 
 exports.load = function load(app){
     console.log(' - Loading APIs...');

@@ -6,7 +6,7 @@ class ClientUpdater {
     }
 
     Connect(user, game){
-        console.log(user + " connected!")
+        console.log(user + " joined game!")
         this.Connections[user] = game;
         game.Join(user);
     }
@@ -15,31 +15,8 @@ class ClientUpdater {
         delete this.Connections[user];
     }
 
-    Update(req, res) {
-        let currentTurn = parseInt(req.body.turn, 10);
+    Update() {
 
-        if ((req.session.username === undefined) || (this.Connections[req.session.username] === undefined)){
-            res.json({success: false, message: "Not logged in."});
-            return;
-        }
-
-        if (currentTurn === undefined){
-            res.json({success: false, message: "Please send current turn."});
-            return;
-        }
-
-        let neededTurns = this.Connections[req.session.username].turn - currentTurn;
-
-        if (neededTurns > this.UpdateCache){
-            res.json({success: false, message: "Please re-login. Slow connection."});
-            return;
-        }
-
-        let turnData = [];
-        for (let i = 0; i < neededTurns; i++){
-            turnData.push(this.Connections[req.session.username].LastUpdates[i]);
-        }
-        res.json({success: true, turnData: JSON.stringify(turnData)});
     }
 }
 

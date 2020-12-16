@@ -1,5 +1,5 @@
 const http = require('http');
-const {ConnectionService} = require("../modules/_Connect/ConnectionService");
+const {ConnectionService} = require("../modules/_Connect/GameConnectionHandler");
 const debug = require('debug')('polarhamlet:server');
 
 exports.load = function load(app){

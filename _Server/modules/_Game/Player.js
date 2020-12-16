@@ -1,6 +1,7 @@
 class Player {
-    constructor(name) {
+    constructor(name, socketId) {
         this.Name = name;
+        this.SocketId = socketId;
     }
 }
 

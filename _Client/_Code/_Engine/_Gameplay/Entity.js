@@ -1,7 +1,14 @@
-import {Position} from "./Position";
+import {Rectangle} from "./Rectangle";
+import {Graphics} from "../_Graphics/Graphics";
 
 export class Entity {
-    constructor() {
-        this.Position = new Position();
+    constructor(name, bounds, drawingObject) {
+        this.Name = name;
+        this.Bounds = bounds;
+        this.DrawingObject = drawingObject;
+    }
+
+    Draw(){
+        this.DrawingObject.Draw(this.Bounds);
     }
 }
