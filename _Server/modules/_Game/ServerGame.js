@@ -49,12 +49,16 @@ class ServerGame {
         console.log("ReceivedEntity");
 
         if (ServerGame.PlayersNamed[user] !== undefined){
-            let actualEntity = {name: 'house', x: entity.bounds.Center.X, y: entity.bounds.Center.Y, width: 0.2, height: 0.2, color: 'green', owner: user};//new Entity('house', new Rectangle(entity.bounds.center, new Position(0.2, 0.2)), new ColorDrawer('green'));
+            if (ServerGame.PlayersNamed[user].Ore >= 3){
+                ServerGame.PlayersNamed[user].Ore -= 3;
 
-            ServerGame.PlayersNamed[user].Buildings++;
+                let actualEntity = {name: 'house', x: entity.bounds.Center.X, y: entity.bounds.Center.Y, width: 0.2, height: 0.2, color: 'green', owner: user};//new Entity('house', new Rectangle(entity.bounds.center, new Position(0.2, 0.2)), new ColorDrawer('green'));
 
-            ServerGame.World.Entities.push(actualEntity);
-            app.get("sockets").ServeNewEntity(actualEntity);
+                ServerGame.PlayersNamed[user].Buildings++;
+
+                ServerGame.World.Entities.push(actualEntity);
+                app.get("sockets").ServeNewEntity(actualEntity);
+            }
         }
     }
 
@@ -66,6 +70,7 @@ class ServerGame {
 
         for (const player in ServerGame.PlayersNamed){
             if (ServerGame.PlayersNamed.hasOwnProperty(player)){
+                ServerGame.PlayersNamed[player].updateGame();
                 app.get('sockets').SendOne(ServerGame.PlayersNamed[player].data(), ServerGame.PlayersNamed[player].SocketId);
             }
         }
