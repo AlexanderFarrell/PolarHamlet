@@ -652,6 +652,7 @@ var MainScreen = /*#__PURE__*/function (_UiContainer) {
     value: function Load() {
       this.createButton = (0, _jquery["default"])('<div id="CreateButton" class="StartButton">Create Account</div>');
       this.loginButton = (0, _jquery["default"])('<div id="LoginButton" class="StartButton">Login</div>');
+      this.exitButton = (0, _jquery["default"])('<div id="ExitButton" class="StartButton">Exit</div>');
       this.createButton.click(function () {
         (0, _jquery["default"])('#MainScreen').hide();
         (0, _jquery["default"])('#CreateAccountScreen').show();
@@ -664,8 +665,12 @@ var MainScreen = /*#__PURE__*/function (_UiContainer) {
         (0, _jquery["default"])('#StartTitle').innerHTML = "Login";
         document.getElementById('StartTitle').innerText = "Login";
       });
+      this.exitButton.click(function () {
+        document.location.href = '/';
+      });
       this.containerElement.append(this.createButton);
       this.containerElement.append(this.loginButton);
+      this.containerElement.append(this.exitButton);
     }
   }]);
 
@@ -1276,7 +1281,16 @@ var ClientWorld = /*#__PURE__*/function () {
   }, {
     key: "Create",
     value: function Create(entity) {
-      _Game.Game.socket.emit('new-entity', JSON.stringify(entity));
+      _Game.Game.socket.emit('new-entity', {
+        name: entity.Name,
+        bounds: {
+          Center: {
+            x: entity.Bounds.Size.X,
+            y: entity.Bounds.Size.Y
+          }
+        },
+        color: 'red'
+      });
     }
   }, {
     key: "End",
@@ -1761,8 +1775,8 @@ var Camera = /*#__PURE__*/function () {
   function Camera() {
     _classCallCheck(this, Camera);
 
-    this.Rectangle = new _Rectangle.Rectangle(new _Position.Position(0, 0), new _Position.Position(20, 10));
-    this.BaseRectangle = new _Rectangle.Rectangle(new _Position.Position(0, 0), new _Position.Position(20, 10));
+    this.Rectangle = new _Rectangle.Rectangle(new _Position.Position(50, 50), new _Position.Position(20, 10));
+    this.BaseRectangle = new _Rectangle.Rectangle(new _Position.Position(50, 50), new _Position.Position(20, 10));
     this.Scale = new _Position.Position(0, 0); //Not to access, stored here just for performance.
 
     this.Scroll = 1.0;

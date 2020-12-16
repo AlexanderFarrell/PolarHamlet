@@ -12,6 +12,7 @@ export class MainScreen extends UiContainer{
     Load() {
         this.createButton = $('<div id="CreateButton" class="StartButton">Create Account</div>');
         this.loginButton = $('<div id="LoginButton" class="StartButton">Login</div>');
+        this.exitButton = $('<div id="ExitButton" class="StartButton">Exit</div>');
 
         this.createButton.click(function (){
             $('#MainScreen').hide();
@@ -24,9 +25,13 @@ export class MainScreen extends UiContainer{
             $('#LoginAccountScreen').show();
             $('#StartTitle').innerHTML = "Login";
             document.getElementById('StartTitle').innerText = "Login";
-        })
+        });
+        this.exitButton.click(function () {
+            document.location.href = '/';
+        });
 
         this.containerElement.append(this.createButton);
         this.containerElement.append(this.loginButton);
+        this.containerElement.append(this.exitButton);
     }
 }

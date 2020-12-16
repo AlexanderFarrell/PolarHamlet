@@ -5,8 +5,8 @@ import {Graphics} from "./Graphics";
 
 export class Camera {
     constructor() {
-        this.Rectangle = new Rectangle(new Position(0,0), new Position(20, 10));
-        this.BaseRectangle = new Rectangle(new Position(0,0), new Position(20, 10));
+        this.Rectangle = new Rectangle(new Position(50,50), new Position(20, 10));
+        this.BaseRectangle = new Rectangle(new Position(50,50), new Position(20, 10));
         this.Scale = new Position(0,0); //Not to access, stored here just for performance.
         this.Scroll = 1.0;
     }

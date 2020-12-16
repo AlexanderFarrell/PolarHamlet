@@ -78,3 +78,10 @@ h3 {
 .BreadcrumbItem {
 
 }
+
+#Instruction {
+    position: absolute;
+    bottom: 0;
+    left: 4vmin;
+
+}
