@@ -122,7 +122,12 @@ export class PlayModel extends AppStateModel {
 
     End(error, callback) {
         clearInterval(this.UpdateLoop);
+        ClientWorld.End();
 
+
+        delete Game.socket;
+
+        callback();
         //Not needed to disconnect. This is actually beneficial only to the player.
 
         /*$.ajax('/game/leave', {

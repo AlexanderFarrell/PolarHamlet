@@ -6,6 +6,7 @@ export class AppState {
     }
 
     Load(error, callback){
+        console.log("Load Called " + this.constructor.name);
         this.Model.Load(OnError, () => {
             this.View.Load(OnError, () => {
                 callback();
@@ -18,6 +19,7 @@ export class AppState {
     }
 
     Begin(error, callback){
+        console.log("Begin Called");
         this.Model.Begin(OnError, () => {
             this.View.Begin(OnError, () => {
                 if (callback)

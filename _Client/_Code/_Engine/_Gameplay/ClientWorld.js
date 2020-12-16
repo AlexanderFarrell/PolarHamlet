@@ -70,7 +70,7 @@ export class ClientWorld {
 
         ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(3.0,3.0), new Position(1.0,1.0)), new ColorDrawer('red')));
 
-        setInterval(() => {
+        ClientWorld.Loop = setInterval(() => {
             ClientWorld.ClientUpdate();
             ClientWorld.Draw();
         }, 17);
@@ -85,6 +85,8 @@ export class ClientWorld {
         delete ClientWorld.Entities;
         delete ClientWorld.Tilemap;
         delete ClientWorld.MouseMover;
+
+        clearInterval(ClientWorld.Loop);
     }
 
     static Draw(){

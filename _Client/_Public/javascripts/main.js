@@ -862,7 +862,12 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
   }, {
     key: "End",
     value: function End(error, callback) {
-      clearInterval(this.UpdateLoop); //Not needed to disconnect. This is actually beneficial only to the player.
+      clearInterval(this.UpdateLoop);
+
+      _ClientWorld.ClientWorld.End();
+
+      delete _Game.Game.socket;
+      callback(); //Not needed to disconnect. This is actually beneficial only to the player.
 
       /*$.ajax('/game/leave', {
           method: 'POST',
@@ -910,6 +915,12 @@ exports.PlayView = void 0;
 
 var _AppStateView2 = __webpack_require__(/*! ../../_Engine/_Screen/AppStateView */ "./_Client/_Code/_Engine/_Screen/AppStateView.js");
 
+var _MainButtons = __webpack_require__(/*! ./_Views/MainButtons */ "./_Client/_Code/_AppScreens/_Play/_Views/MainButtons.js");
+
+var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -944,7 +955,15 @@ var PlayView = /*#__PURE__*/function (_AppStateView) {
   _createClass(PlayView, [{
     key: "Load",
     value: function Load(error, callback) {
+      this.mainButtons = new _MainButtons.MainButtons();
+      this.mainButtons.Load();
       callback();
+    }
+  }, {
+    key: "Render",
+    value: function Render() {
+      var root = (0, _jquery["default"])('#root');
+      root.append(this.mainButtons.containerElement);
     }
   }]);
 
@@ -952,6 +971,92 @@ var PlayView = /*#__PURE__*/function (_AppStateView) {
 }(_AppStateView2.AppStateView);
 
 exports.PlayView = PlayView;
+
+/***/ }),
+
+/***/ "./_Client/_Code/_AppScreens/_Play/_Views/MainButtons.js":
+/*!***************************************************************!*\
+  !*** ./_Client/_Code/_AppScreens/_Play/_Views/MainButtons.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.MainButtons = void 0;
+
+var _UiContainer2 = __webpack_require__(/*! ../../../_Engine/_View/UiContainer */ "./_Client/_Code/_Engine/_View/UiContainer.js");
+
+var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"));
+
+var _GameBuilder = __webpack_require__(/*! ../../../_Game/GameBuilder */ "./_Client/_Code/_Game/GameBuilder.js");
+
+var _GameStateFlow = __webpack_require__(/*! ../../../_Game/GameStateFlow */ "./_Client/_Code/_Game/GameStateFlow.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+var MainButtons = /*#__PURE__*/function (_UiContainer) {
+  _inherits(MainButtons, _UiContainer);
+
+  var _super = _createSuper(MainButtons);
+
+  function MainButtons() {
+    _classCallCheck(this, MainButtons);
+
+    return _super.call(this, (0, _jquery["default"])('<div id="MainButtons"></div>'));
+  }
+
+  _createClass(MainButtons, [{
+    key: "Load",
+    value: function Load() {
+      _get(_getPrototypeOf(MainButtons.prototype), "Load", this).call(this);
+
+      this.logout = (0, _jquery["default"])('<div id="LogoutButton" class="EditorButton">Logout</div>'); //this.loginButton = $('<div id="LoginButton" class="StartButton">Login</div>');
+
+      this.logout.click(function () {
+        _GameStateFlow.GameStateFlow.ToLoginCreateAccountPage();
+
+        _GameBuilder.GameBuilder.EndEngine();
+
+        _GameBuilder.GameBuilder.DestroyGame();
+      });
+      this.containerElement.append(this.logout);
+    }
+  }]);
+
+  return MainButtons;
+}(_UiContainer2.UiContainer);
+
+exports.MainButtons = MainButtons;
 
 /***/ }),
 
@@ -1055,6 +1160,7 @@ var TileMap = /*#__PURE__*/function () {
     console.log(data.world.Height);
     this.Width = data.world.Width;
     this.Height = data.world.Height;
+    this.Tiles = data.world.Tiles;
     this.Rectangle = new _Rectangle.Rectangle(new _Position.Position(0, 0), new _Position.Position(this.Width, this.Height));
   }
 
@@ -1065,17 +1171,24 @@ var TileMap = /*#__PURE__*/function () {
       var topLeft = rect.TopLeft();
       var oneTileWidth = rect.Size.X / this.Width;
       var oneTileHeight = rect.Size.Y / this.Height;
-      /*let xStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().X));
-      let yStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().Y));
-      let xEnd = Math.ceil(Math.min(this.Width, ClientWorld.Camera.Rectangle.BottomRight().X));
-      let yEnd = Math.ceil(Math.min(this.Height, ClientWorld.Camera.Rectangle.BottomRight().Y));
-        console.log("xStart" + xStart);
-      console.log('yStart' + yStart);
-      console.log('xEnd' + xEnd);
-      console.log('yEnd' + yEnd);*/
+      var xStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().X));
+      var yStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().Y));
+      var xEnd = Math.ceil(Math.min(this.Width - 1, ClientWorld.Camera.Rectangle.BottomRight().X));
+      var yEnd = Math.ceil(Math.min(this.Height - 1, ClientWorld.Camera.Rectangle.BottomRight().Y));
 
-      /*for (let x = xStart; x < xEnd; x++){
-          for (let y = yStart; y < yEnd; y++){
+      for (var x = xStart; x < xEnd; x++) {
+        for (var y = yStart; y < yEnd; y++) {
+          _Graphics.Graphics.Context.fillStyle = "rgb(\n                    ".concat(this.Tiles[x][y].Red, ",\n                    ").concat(this.Tiles[x][y].Green, ",\n                    ").concat(this.Tiles[x][y].Blue, "\n                )");
+          /*'red';/*`rgb(
+            ${255 - 2 * x},
+            ${255 - 2 * y},
+            0)`;*/
+
+          _Graphics.Graphics.Context.fillRect(rect.Center.X + oneTileWidth * x, rect.Center.Y + oneTileHeight * y, oneTileWidth, oneTileHeight);
+        }
+      }
+      /*for (let x = 0; x < this.Width; x++){
+          for (let y = 0; y < this.Height; y++){
               Graphics.Context.fillStyle = `rgb(
                   ${255 - 2 * x},
                   ${255 - 2 * y},
@@ -1085,13 +1198,6 @@ var TileMap = /*#__PURE__*/function () {
           }
       }*/
 
-      for (var x = 0; x < this.Width; x++) {
-        for (var y = 0; y < this.Height; y++) {
-          _Graphics.Graphics.Context.fillStyle = "rgb(\n                    ".concat(255 - 2 * x, ",\n                    ").concat(255 - 2 * y, ",\n                    0)");
-
-          _Graphics.Graphics.Context.fillRect(topLeft.X + oneTileWidth * x, topLeft.Y + oneTileHeight * y, oneTileWidth, oneTileHeight);
-        }
-      }
     }
   }]);
 
@@ -1110,8 +1216,8 @@ var ClientWorld = /*#__PURE__*/function () {
       ClientWorld.Entities = [];
       ClientWorld.Tilemap = new TileMap(data);
       ClientWorld.MouseMover = new _MouseMover.MouseMover();
-      ClientWorld.Entities.push(new _Entity.Entity('Test', new _Rectangle.Rectangle(new _Position.Position(0.0, 0.0), new _Position.Position(1.0, 1.0)), new _ColorDrawer.ColorDrawer('red')));
-      setInterval(function () {
+      ClientWorld.Entities.push(new _Entity.Entity('Test', new _Rectangle.Rectangle(new _Position.Position(3.0, 3.0), new _Position.Position(1.0, 1.0)), new _ColorDrawer.ColorDrawer('red')));
+      ClientWorld.Loop = setInterval(function () {
         ClientWorld.ClientUpdate();
         ClientWorld.Draw();
       }, 17);
@@ -1128,6 +1234,7 @@ var ClientWorld = /*#__PURE__*/function () {
       delete ClientWorld.Entities;
       delete ClientWorld.Tilemap;
       delete ClientWorld.MouseMover;
+      clearInterval(ClientWorld.Loop);
     }
   }, {
     key: "Draw",
@@ -1344,6 +1451,7 @@ var MouseMover = /*#__PURE__*/function () {
     _classCallCheck(this, MouseMover);
 
     this.LastPosition = new _Position.Position(0.0, 0.0);
+    this.Delta = new _Position.Position(0, 0);
   }
 
   _createClass(MouseMover, [{
@@ -1355,14 +1463,19 @@ var MouseMover = /*#__PURE__*/function () {
         var mouseWorldPos = _ClientWorld.ClientWorld.Camera.InverseTransformPos(_InputManager.InputManager.MousePosition);
 
         if (_InputManager.InputManager.MousePressTime() > 50) {
-          _ClientWorld.ClientWorld.Camera.Rectangle.Center.X -= mouseWorldPos.X - this.LastPosition.X;
-          _ClientWorld.ClientWorld.Camera.Rectangle.Center.Y -= mouseWorldPos.Y - this.LastPosition.Y;
+          this.Delta.X = -(mouseWorldPos.X - this.LastPosition.X);
+          this.Delta.Y = -(mouseWorldPos.Y - this.LastPosition.Y); //ClientWorld.Camera.Rectangle.Center.X -= (mouseWorldPos.X - this.LastPosition.X);
+          //ClientWorld.Camera.Rectangle.Center.Y -= (mouseWorldPos.Y - this.LastPosition.Y);
+
           this.LastPosition.X = mouseWorldPos.X;
           this.LastPosition.Y = mouseWorldPos.Y;
         } else {
           this.LastPosition.X = mouseWorldPos.X;
           this.LastPosition.Y = mouseWorldPos.Y;
         }
+      } else {
+        this.Delta.X *= 0.9;
+        this.Delta.Y *= 0.9;
       }
 
       if (_InputManager.InputManager.Scroll !== _ClientWorld.ClientWorld.Camera.Scroll) {
@@ -1372,6 +1485,9 @@ var MouseMover = /*#__PURE__*/function () {
         _ClientWorld.ClientWorld.Camera.Rectangle.Size.X = _ClientWorld.ClientWorld.Camera.BaseRectangle.Size.X * _InputManager.InputManager.Scroll;
         _ClientWorld.ClientWorld.Camera.Rectangle.Size.Y = _ClientWorld.ClientWorld.Camera.BaseRectangle.Size.Y * _InputManager.InputManager.Scroll;
       }
+
+      _ClientWorld.ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
+      _ClientWorld.ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
     }
   }]);
 
@@ -1825,6 +1941,7 @@ var AppState = /*#__PURE__*/function () {
     value: function Load(error, callback) {
       var _this = this;
 
+      console.log("Load Called " + this.constructor.name);
       this.Model.Load(OnError, function () {
         _this.View.Load(OnError, function () {
           callback();
@@ -1840,6 +1957,7 @@ var AppState = /*#__PURE__*/function () {
     value: function Begin(error, callback) {
       var _this2 = this;
 
+      console.log("Begin Called");
       this.Model.Begin(OnError, function () {
         _this2.View.Begin(OnError, function () {
           if (callback) callback();
