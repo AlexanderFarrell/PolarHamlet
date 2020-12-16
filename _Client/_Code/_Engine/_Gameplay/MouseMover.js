@@ -27,6 +27,9 @@ export class MouseMover {
         }
 
         if (InputManager.Scroll !== ClientWorld.Camera.Scroll){
+            console.log(InputManager.Scroll);
+            console.log(ClientWorld.Camera.Scroll);
+
             ClientWorld.Camera.Scroll = InputManager.Scroll;
             ClientWorld.Camera.Rectangle.Size.X = ClientWorld.Camera.BaseRectangle.Size.X * InputManager.Scroll;
             ClientWorld.Camera.Rectangle.Size.Y = ClientWorld.Camera.BaseRectangle.Size.Y * InputManager.Scroll;

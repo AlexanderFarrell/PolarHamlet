@@ -7,11 +7,18 @@ import {ColorDrawer} from "./ColorDrawer";
 import {MouseMover} from "./MouseMover";
 
 class TileMap {
-    constructor() {
-        this.Width = 100;
-        this.Height = 100;
+    constructor(data) {
+        /*this.Width = 100;
+        this.Height = 100;*/
+
+        console.log(data.world.Width);
+        console.log(data.world.Height);
+        this.Width = data.world.Width;
+        this.Height = data.world.Height;
+
         this.Rectangle = new Rectangle(new Position(0,0), new Position(this.Width, this.Height));
-        this.BaseRectangle = new Rectangle(new Position(0,0), new Position(this.Width, this.Height));
+
+
     }
 
     Draw(){
@@ -19,6 +26,28 @@ class TileMap {
         let topLeft = rect.TopLeft();
         let oneTileWidth = rect.Size.X/this.Width;
         let oneTileHeight = rect.Size.Y/this.Height;
+
+        /*let xStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().X));
+        let yStart = Math.floor(Math.max(0, ClientWorld.Camera.Rectangle.TopLeft().Y));
+        let xEnd = Math.ceil(Math.min(this.Width, ClientWorld.Camera.Rectangle.BottomRight().X));
+        let yEnd = Math.ceil(Math.min(this.Height, ClientWorld.Camera.Rectangle.BottomRight().Y));
+
+        console.log("xStart" + xStart);
+        console.log('yStart' + yStart);
+        console.log('xEnd' + xEnd);
+        console.log('yEnd' + yEnd);*/
+
+        /*for (let x = xStart; x < xEnd; x++){
+            for (let y = yStart; y < yEnd; y++){
+                Graphics.Context.fillStyle = `rgb(
+                    ${255 - 2 * x},
+                    ${255 - 2 * y},
+                    0)`;
+                Graphics.Context.fillRect(topLeft.X + (oneTileWidth * x), topLeft.Y + (oneTileHeight * y),
+                    oneTileWidth, oneTileHeight);
+            }
+        }*/
+
         for (let x = 0; x < this.Width; x++){
             for (let y = 0; y < this.Height; y++){
                 Graphics.Context.fillStyle = `rgb(
@@ -34,10 +63,10 @@ class TileMap {
 
 export class ClientWorld {
 
-    static Begin(){
+    static Begin(data){
         ClientWorld.Camera = new Camera();
         ClientWorld.Entities = [];
-        ClientWorld.Tilemap = new TileMap();
+        ClientWorld.Tilemap = new TileMap(data);
         ClientWorld.MouseMover = new MouseMover();
 
         ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(0.0,0.0), new Position(1.0,1.0)), new ColorDrawer('red')));
