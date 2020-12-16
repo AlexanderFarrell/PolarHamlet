@@ -704,6 +704,14 @@ var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "./node_m
 
 var _Game = __webpack_require__(/*! ../../_Game/Game */ "./_Client/_Code/_Game/Game.js");
 
+var _Entity = __webpack_require__(/*! ../../_Engine/_Gameplay/Entity */ "./_Client/_Code/_Engine/_Gameplay/Entity.js");
+
+var _Rectangle = __webpack_require__(/*! ../../_Engine/_Gameplay/Rectangle */ "./_Client/_Code/_Engine/_Gameplay/Rectangle.js");
+
+var _Position = __webpack_require__(/*! ../../_Engine/_Gameplay/Position */ "./_Client/_Code/_Engine/_Gameplay/Position.js");
+
+var _ColorDrawer = __webpack_require__(/*! ../../_Engine/_Gameplay/ColorDrawer */ "./_Client/_Code/_Engine/_Gameplay/ColorDrawer.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -773,6 +781,12 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
               //console.log(displayString);
               _Game.Game.PlayerData = "Citizens: " + data.citizens + " - Ore: " + data.ore + " - Food: " + data.food + " - Buildings: " + data.buildings;
               document.getElementById('BarDisplay').innerText = _Game.Game.PlayerData + "        " + _Game.Game.CurrentAction;
+            });
+
+            _Game.Game.socket.on('notify-new-entity', function (entity) {
+              _ClientWorld.ClientWorld.Entities.add(new _Entity.Entity(entity.name, new _Rectangle.Rectangle(new _Position.Position(entity.x, entity.y), new _Position.Position(entity.width, entity.height)), new _ColorDrawer.ColorDrawer('green')));
+
+              console.log("New Entity " + JSON.stringify(entity));
             });
             /*Game.socket.on('init', (data) => {
                 console.log("init with " + JSON.stringify(data));
@@ -1006,6 +1020,10 @@ var _GameBuilder = __webpack_require__(/*! ../../../_Game/GameBuilder */ "./_Cli
 
 var _GameStateFlow = __webpack_require__(/*! ../../../_Game/GameStateFlow */ "./_Client/_Code/_Game/GameStateFlow.js");
 
+var _InputManager = __webpack_require__(/*! ../../../_Engine/_Input/InputManager */ "./_Client/_Code/_Engine/_Input/InputManager.js");
+
+var _MouseClicker = __webpack_require__(/*! ../../../_Engine/_Gameplay/MouseClicker */ "./_Client/_Code/_Engine/_Gameplay/MouseClicker.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1056,15 +1074,12 @@ var MainButtons = /*#__PURE__*/function (_UiContainer) {
       });
       var cancel = this.cancel;
       this.logout.click(function () {
-        _GameStateFlow.GameStateFlow.ToLoginCreateAccountPage();
-
-        _GameBuilder.GameBuilder.EndEngine();
-
-        _GameBuilder.GameBuilder.DestroyGame();
+        document.location.href = '/';
       });
       this.house = (0, _jquery["default"])('<div id="BuildHouse" class="EditorButton">Build House</div>');
       this.house.click(function () {
-        cancel.show();
+        cancel.toggle();
+        _MouseClicker.MouseClicker.Build = !_MouseClicker.MouseClicker.Build;
       });
       this.display = (0, _jquery["default"])('<div id="BarDisplay">Things</div>');
       this.buttonHolder = (0, _jquery["default"])('<div id="PlayButtons"></div>');
@@ -1168,6 +1183,10 @@ var _ColorDrawer = __webpack_require__(/*! ./ColorDrawer */ "./_Client/_Code/_En
 
 var _MouseMover = __webpack_require__(/*! ./MouseMover */ "./_Client/_Code/_Engine/_Gameplay/MouseMover.js");
 
+var _Game = __webpack_require__(/*! ../../_Game/Game */ "./_Client/_Code/_Game/Game.js");
+
+var _MouseClicker = __webpack_require__(/*! ./MouseClicker */ "./_Client/_Code/_Engine/_Gameplay/MouseClicker.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1241,6 +1260,7 @@ var ClientWorld = /*#__PURE__*/function () {
       ClientWorld.Entities = [];
       ClientWorld.Tilemap = new TileMap(data);
       ClientWorld.MouseMover = new _MouseMover.MouseMover();
+      ClientWorld.MouseClicker = new _MouseClicker.MouseClicker();
       ClientWorld.Entities.push(new _Entity.Entity('Test', new _Rectangle.Rectangle(new _Position.Position(3.0, 3.0), new _Position.Position(1.0, 1.0)), new _ColorDrawer.ColorDrawer('red')));
       ClientWorld.Loop = setInterval(function () {
         ClientWorld.ClientUpdate();
@@ -1251,6 +1271,12 @@ var ClientWorld = /*#__PURE__*/function () {
     key: "ClientUpdate",
     value: function ClientUpdate() {
       ClientWorld.MouseMover.Update();
+      ClientWorld.MouseClicker.Update();
+    }
+  }, {
+    key: "Create",
+    value: function Create(entity) {
+      _Game.Game.socket.emit('new-entity', JSON.stringify(entity));
     }
   }, {
     key: "End",
@@ -1284,7 +1310,7 @@ exports.ClientWorld = ClientWorld;
 /*!********************************************************!*\
   !*** ./_Client/_Code/_Engine/_Gameplay/ColorDrawer.js ***!
   \********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1355,6 +1381,9 @@ var ColorDrawer = /*#__PURE__*/function (_DrawingObject) {
 }(_DrawingObject2.DrawingObject);
 
 exports.ColorDrawer = ColorDrawer;
+module.exports = {
+  ColorDrawer: ColorDrawer
+};
 
 /***/ }),
 
@@ -1402,7 +1431,7 @@ exports.DrawingObject = DrawingObject;
 /*!***************************************************!*\
   !*** ./_Client/_Code/_Engine/_Gameplay/Entity.js ***!
   \***************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1415,6 +1444,8 @@ exports.Entity = void 0;
 var _Rectangle = __webpack_require__(/*! ./Rectangle */ "./_Client/_Code/_Engine/_Gameplay/Rectangle.js");
 
 var _Graphics = __webpack_require__(/*! ../_Graphics/Graphics */ "./_Client/_Code/_Engine/_Graphics/Graphics.js");
+
+var _ColorDrawer = __webpack_require__(/*! ./ColorDrawer */ "./_Client/_Code/_Engine/_Gameplay/ColorDrawer.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1442,6 +1473,69 @@ var Entity = /*#__PURE__*/function () {
 }();
 
 exports.Entity = Entity;
+module.exports = {
+  Entity: Entity
+};
+
+/***/ }),
+
+/***/ "./_Client/_Code/_Engine/_Gameplay/MouseClicker.js":
+/*!*********************************************************!*\
+  !*** ./_Client/_Code/_Engine/_Gameplay/MouseClicker.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.MouseClicker = void 0;
+
+var _InputManager = __webpack_require__(/*! ../_Input/InputManager */ "./_Client/_Code/_Engine/_Input/InputManager.js");
+
+var _ClientWorld = __webpack_require__(/*! ./ClientWorld */ "./_Client/_Code/_Engine/_Gameplay/ClientWorld.js");
+
+var _Entity = __webpack_require__(/*! ./Entity */ "./_Client/_Code/_Engine/_Gameplay/Entity.js");
+
+var _Rectangle = __webpack_require__(/*! ./Rectangle */ "./_Client/_Code/_Engine/_Gameplay/Rectangle.js");
+
+var _Position = __webpack_require__(/*! ./Position */ "./_Client/_Code/_Engine/_Gameplay/Position.js");
+
+var _ColorDrawer = __webpack_require__(/*! ./ColorDrawer */ "./_Client/_Code/_Engine/_Gameplay/ColorDrawer.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var MouseClicker = /*#__PURE__*/function () {
+  function MouseClicker() {
+    _classCallCheck(this, MouseClicker);
+
+    this.LastState = _InputManager.InputManager.Mousedown;
+    MouseClicker.Build = false;
+  }
+
+  _createClass(MouseClicker, [{
+    key: "Update",
+    value: function Update() {
+      if (_InputManager.InputManager.Mousedown !== this.LastState) {
+        if (MouseClicker.Build && _InputManager.InputManager.Mousedown) {
+          var mouseWorldPos = _ClientWorld.ClientWorld.Camera.InverseTransformPos(_InputManager.InputManager.MousePosition);
+
+          _ClientWorld.ClientWorld.Create(new _Entity.Entity('House', new _Rectangle.Rectangle(mouseWorldPos, new _Position.Position(0.3, 0.3)), new _ColorDrawer.ColorDrawer('green')));
+        }
+      }
+    }
+  }]);
+
+  return MouseClicker;
+}();
+
+exports.MouseClicker = MouseClicker;
 
 /***/ }),
 
@@ -1517,21 +1611,18 @@ var MouseMover = /*#__PURE__*/function () {
 
       _ClientWorld.ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
       _ClientWorld.ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
-
-      if (_InputManager.InputManager.Mouseover) {
-        var _mouseWorldPos = _ClientWorld.ClientWorld.Camera.InverseTransformPos(_InputManager.InputManager.MousePosition);
-
-        if (_ClientWorld.ClientWorld.Tilemap.Rectangle.IsInsidePosition(_mouseWorldPos)) {
-          var x = Math.floor(_mouseWorldPos.X);
-          var y = Math.floor(_mouseWorldPos.Y);
-
-          try {
-            _Game.Game.CurrentAction = _ClientWorld.ClientWorld.Tilemap.Types[_ClientWorld.ClientWorld.Tilemap.Tiles[x][y].TileType].Name + " X: " + x + " Y: " + y;
-          } catch (e) {
-            console.log(e);
+      /*if (InputManager.Mouseover){
+          let mouseWorldPos = ClientWorld.Camera.InverseTransformPos(InputManager.MousePosition);
+            if (ClientWorld.Tilemap.Rectangle.IsInsidePosition(mouseWorldPos)){
+              let x = Math.floor(mouseWorldPos.X);
+              let y = Math.floor(mouseWorldPos.Y);
+                try {
+                  Game.CurrentAction = ClientWorld.Tilemap.Types[ClientWorld.Tilemap.Tiles[x][y].TileType].Name + " X: " + x + " Y: " + y;
+              } catch (e) {
+                  console.log(e);
+              }
           }
-        }
-      }
+      }*/
     }
   }]);
 

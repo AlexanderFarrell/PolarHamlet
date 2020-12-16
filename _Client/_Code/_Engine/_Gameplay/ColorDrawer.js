@@ -16,3 +16,5 @@ export class ColorDrawer extends DrawingObject{
         Graphics.Context.fillRect(topLeft.X, topLeft.Y, rect.Size.X, rect.Size.Y);
     }
 }
+
+module.exports = {ColorDrawer}

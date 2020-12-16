@@ -1,3 +1,5 @@
+
+
 const {Player} = require("./Player");
 const {World} = require("./World");
 
@@ -32,6 +34,15 @@ class ServerGame {
 
     ReceiveMoves(player, moves){
         console.log(player + ": " + JSON.stringify(moves));
+    }
+
+    NewEntity(entity){
+        console.log(entity);
+
+        let actualEntity = {name: 'house', x: entity.bounds.Center.X, y: entity.bounds.Center.Y, width: 0.2, height: 0.2, color: 'green'};//new Entity('house', new Rectangle(entity.bounds.center, new Position(0.2, 0.2)), new ColorDrawer('green'));
+
+        this.World.Entities.append(actualEntity);
+        app.get("sockets").ServeNewEntity(actualEntity);
     }
 
     Update(app){

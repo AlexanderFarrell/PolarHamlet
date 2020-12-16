@@ -46,7 +46,7 @@ export class MouseMover {
         ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
         ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
 
-        if (InputManager.Mouseover){
+        /*if (InputManager.Mouseover){
             let mouseWorldPos = ClientWorld.Camera.InverseTransformPos(InputManager.MousePosition);
 
             if (ClientWorld.Tilemap.Rectangle.IsInsidePosition(mouseWorldPos)){
@@ -59,6 +59,6 @@ export class MouseMover {
                     console.log(e);
                 }
             }
-        }
+        }*/
     }
 }

@@ -29,6 +29,11 @@ class GameConnectionHandler {
                 //console.log(socket.handshake.session.username + ': ' + JSON.stringify(moves))
             })
 
+            socket.on('new-entity', (entity) => {
+                this.NewEntity(socket.handshake.session.username, entity);
+                //console.log(socket.handshake.session.username + ': ' + JSON.stringify(moves))
+            })
+
             handler.Update = function UpdateWorld(worldUpdates){
                 console.log("Emit");
                 socket.emit('world', worldUpdates);
@@ -45,6 +50,7 @@ class GameConnectionHandler {
 
         //app.get('Game').SendUpdate = this.Update;
         this.ReceiveMoves = app.get('Game').ReceiveMoves;
+        this.NewEntity = app.get('Game').NewEntity;
     }
 
     Update(worldUpdates){
@@ -53,6 +59,10 @@ class GameConnectionHandler {
 
     InitPlayer(world){
         this.io.emit('init', JSON.stringify(world));
+    }
+
+    ServeNewEntity(entity){
+        this.io.emit('notify-new-entity', entity);
     }
 }
 

@@ -51,15 +51,20 @@ h3 {
 #PlayButton {
     position: absolute;
     background-color: #285a5a;
-    width: 30vmin;
+    width: 40vmin;
     bottom: 5vmin;
     right: 5vmin;
-    height: 30vmin;
+    height: 10vmin;
+    color: white;
+    text-align: center;
+    font-size: 4vmin;
+    padding-top: 2vmin;
 }
 
 #PlayButton:hover {
     background-color: #3a8787;
     cursor: pointer;
+    color: white;
 }
 
 #NewsTitle {

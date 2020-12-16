@@ -1,5 +1,6 @@
 import {Rectangle} from "./Rectangle";
 import {Graphics} from "../_Graphics/Graphics";
+import {ColorDrawer} from "./ColorDrawer";
 
 export class Entity {
     constructor(name, bounds, drawingObject) {
@@ -12,3 +13,5 @@ export class Entity {
         this.DrawingObject.Draw(this.Bounds);
     }
 }
+
+module.exports = {Entity}

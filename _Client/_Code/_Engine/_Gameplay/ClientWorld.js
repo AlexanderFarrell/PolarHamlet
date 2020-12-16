@@ -6,6 +6,7 @@ import {Position} from "./Position";
 import {ColorDrawer} from "./ColorDrawer";
 import {MouseMover} from "./MouseMover";
 import {Game} from "../../_Game/Game";
+import {MouseClicker} from "./MouseClicker";
 
 class TileMap {
     constructor(data) {
@@ -70,6 +71,7 @@ export class ClientWorld {
         ClientWorld.Entities = [];
         ClientWorld.Tilemap = new TileMap(data);
         ClientWorld.MouseMover = new MouseMover();
+        ClientWorld.MouseClicker = new MouseClicker();
 
         ClientWorld.Entities.push(new Entity('Test', new Rectangle(new Position(3.0,3.0), new Position(1.0,1.0)), new ColorDrawer('red')));
 
@@ -81,10 +83,11 @@ export class ClientWorld {
 
     static ClientUpdate(){
         ClientWorld.MouseMover.Update();
+        ClientWorld.MouseClicker.Update();
     }
 
     static Create(entity){
-        Game.io.emit('new-entity', entity);
+        Game.socket.emit('new-entity', {name: entity.Name, bounds: {Center: {x: entity.Bounds.Size.X, y: entity.Bounds.Size.Y}}, color: 'red'});
     }
 
     static End(){

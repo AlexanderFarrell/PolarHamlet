@@ -2,6 +2,8 @@ import {UiContainer} from "../../../_Engine/_View/UiContainer";
 import $ from "jquery";
 import {GameBuilder} from "../../../_Game/GameBuilder";
 import {GameStateFlow} from "../../../_Game/GameStateFlow";
+import {InputManager} from "../../../_Engine/_Input/InputManager";
+import {MouseClicker} from "../../../_Engine/_Gameplay/MouseClicker";
 
 export class MainButtons extends UiContainer {
     constructor() {
@@ -24,15 +26,14 @@ export class MainButtons extends UiContainer {
         let cancel = this.cancel;
 
         this.logout.click(function (){
-            GameStateFlow.ToLoginCreateAccountPage();
-            GameBuilder.EndEngine();
-            GameBuilder.DestroyGame();
+            document.location.href = '/';
         });
 
         this.house = $('<div id="BuildHouse" class="EditorButton">Build House</div>');
 
         this.house.click(function (){
-            cancel.show();
+            cancel.toggle();
+            MouseClicker.Build = !MouseClicker.Build;
         });
 
         this.display = $('<div id="BarDisplay">Things</div>');

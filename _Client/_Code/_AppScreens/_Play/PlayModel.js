@@ -6,6 +6,10 @@ import {ClientWorld} from "../../_Engine/_Gameplay/ClientWorld";
 
 import $ from 'jquery';
 import {Game} from "../../_Game/Game";
+import {Entity} from "../../_Engine/_Gameplay/Entity";
+import {Rectangle} from "../../_Engine/_Gameplay/Rectangle";
+import {Position} from "../../_Engine/_Gameplay/Position";
+import {ColorDrawer} from "../../_Engine/_Gameplay/ColorDrawer";
 
 export class PlayModel extends AppStateModel {
     constructor() {
@@ -45,6 +49,10 @@ export class PlayModel extends AppStateModel {
                         Game.PlayerData = "Citizens: " + data.citizens + " - Ore: " + data.ore + " - Food: " + data.food + " - Buildings: " + data.buildings;
 
                         document.getElementById('BarDisplay').innerText = Game.PlayerData + "        " + Game.CurrentAction;
+                    })
+                    Game.socket.on('notify-new-entity', (entity) => {
+                        ClientWorld.Entities.add(new Entity(entity.name, new Rectangle(new Position(entity.x, entity.y), new Position(entity.width, entity.height)), new ColorDrawer('green')));
+                        console.log("New Entity " + JSON.stringify(entity));
                     })
                     /*Game.socket.on('init', (data) => {
                         console.log("init with " + JSON.stringify(data));
