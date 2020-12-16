@@ -1,5 +1,5 @@
 
-class ClientUpdater {
+/*class ClientUpdater {
     constructor() {
         this.UpdateCache = 3;
         this.Connections = {};
@@ -20,4 +20,4 @@ class ClientUpdater {
     }
 }
 
-module.exports = {ClientUpdater};
+module.exports = {ClientUpdater};*/

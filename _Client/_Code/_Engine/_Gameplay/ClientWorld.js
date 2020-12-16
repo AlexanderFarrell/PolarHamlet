@@ -5,6 +5,7 @@ import {Rectangle} from "./Rectangle";
 import {Position} from "./Position";
 import {ColorDrawer} from "./ColorDrawer";
 import {MouseMover} from "./MouseMover";
+import {Game} from "../../_Game/Game";
 
 class TileMap {
     constructor(data) {
@@ -19,6 +20,8 @@ class TileMap {
         this.Tiles = data.world.Tiles;
 
         this.Rectangle = new Rectangle(new Position(0,0), new Position(this.Width, this.Height));
+
+        this.Types = data;
     }
 
     Draw(){
@@ -78,6 +81,10 @@ export class ClientWorld {
 
     static ClientUpdate(){
         ClientWorld.MouseMover.Update();
+    }
+
+    static Create(entity){
+        Game.io.emit('new-entity', entity);
     }
 
     static End(){

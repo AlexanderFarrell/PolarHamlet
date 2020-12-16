@@ -6,8 +6,8 @@ function SetupGame(app){
     game.Begin(app);
     app.set("Game", game);
 
-    const connections = new ClientUpdater();
-    app.set('ClientUpdater', connections);
+    //const connections = new ClientUpdater();
+    //app.set('ClientUpdater', connections);
 }
 
 exports.load = SetupGame;

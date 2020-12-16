@@ -4,6 +4,7 @@ import {Position} from "../_Gameplay/Position";
 export class InputManager {
     static Begin(){
         InputManager.Mousedown = false;
+        InputManager.Mouseover = false;
         InputManager.MousePressLast = null;
         InputManager.MousePosition = new Position(0.0, 0.0);
         InputManager.Scroll = 1.0;
@@ -11,9 +12,16 @@ export class InputManager {
         InputManager.ScrollMax = 3.0;
 
         Graphics.Canvas.addEventListener('mousedown', e => {
-            console.log('down');
             InputManager.Mousedown = true;
             InputManager.MousePressLast = Date.now();
+        })
+
+        Graphics.Canvas.addEventListener('mouseover', e => {
+            InputManager.Mouseover = true;
+        })
+
+        Graphics.Canvas.addEventListener('mouseleave', e => {
+            InputManager.Mouseover = false;
         })
 
         Graphics.Canvas.addEventListener('mousemove', e => {

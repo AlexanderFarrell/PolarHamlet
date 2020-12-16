@@ -20,8 +20,10 @@ class ServerGame {
 
     Join(player, app){
         console.log(player + " joined game!")
-        this.Players.push(new Player(player));
+        this.Players.push(player);
         app.get("sockets").InitPlayer({world: this.World});
+
+        console.log(this.Players);
     }
 
     Load(){
@@ -34,9 +36,15 @@ class ServerGame {
 
     Update(app){
         this.turn = this.turn + 1;
-        console.log('Emit');
+        //console.log('Emit');
 
         app.get("sockets").Update({turn: this.turn});
+
+        this.Players.forEach((player) => {
+            //player.update(app.get("sockets").io);
+            app.get('sockets').SendOne(player.data(), player.SocketId);
+        })
+
         //this.SendUpdate({turn: this.turn});
     }
 

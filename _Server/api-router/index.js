@@ -56,6 +56,7 @@ router.post('/login', function(req, res, next) {
       req,
       res,
       () => {
+          console.log(req.session.id);
         res.json({success: true});
         },
       (error) => {

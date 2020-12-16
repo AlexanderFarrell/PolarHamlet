@@ -745,6 +745,9 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
     key: "Load",
     value: function Load(_error, callback) {
       //setInterval(() => {this.Update();}, 500);
+      _Game.Game.PlayerData = "Fetching Statistics!";
+      _Game.Game.CurrentAction = "";
+
       _jquery["default"].ajax('/world', {
         method: 'POST',
         data: {
@@ -761,7 +764,15 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
             });
 
             _Game.Game.socket.on('world', function (data) {
-              console.log(data.turn);
+              console.log(data.turn); //$('#BarDisplay').innerText = data.turn;
+              //document.getElementById('BarDisplay').innerText = data.turn;
+            });
+
+            _Game.Game.socket.on('player', function (data) {
+              //console.log("Received Player Data!");
+              //console.log(displayString);
+              _Game.Game.PlayerData = "Citizens: " + data.citizens + " - Ore: " + data.ore + " - Food: " + data.food + " - Buildings: " + data.buildings;
+              document.getElementById('BarDisplay').innerText = _Game.Game.PlayerData + "        " + _Game.Game.CurrentAction;
             });
             /*Game.socket.on('init', (data) => {
                 console.log("init with " + JSON.stringify(data));
@@ -832,10 +843,8 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
     }
   }, {
     key: "Update",
-    value: function Update() {
-      _Game.Game.socket.emit('moves', {
-        moves: 'This worked!'
-      }); //this.socket.emit("test");
+    value: function Update() {//Game.socket.emit('moves', {moves: 'This worked!'});
+      //this.socket.emit("test");
       //this.socket.emit('Player sending moves to server');
 
       /*if (!this.IsUpdating){
@@ -857,7 +866,6 @@ var PlayModel = /*#__PURE__*/function (_AppStateModel) {
               }
           })
       }*/
-
     }
   }, {
     key: "End",
@@ -1042,6 +1050,11 @@ var MainButtons = /*#__PURE__*/function (_UiContainer) {
 
       this.logout = (0, _jquery["default"])('<div id="LogoutButton" class="EditorButton">Logout</div>'); //this.loginButton = $('<div id="LoginButton" class="StartButton">Login</div>');
 
+      this.cancel = (0, _jquery["default"])('<div id="CancelButton" class="EditorButton">Cancel</div>');
+      this.cancel.click(function () {
+        cancel.hide();
+      });
+      var cancel = this.cancel;
       this.logout.click(function () {
         _GameStateFlow.GameStateFlow.ToLoginCreateAccountPage();
 
@@ -1049,7 +1062,18 @@ var MainButtons = /*#__PURE__*/function (_UiContainer) {
 
         _GameBuilder.GameBuilder.DestroyGame();
       });
-      this.containerElement.append(this.logout);
+      this.house = (0, _jquery["default"])('<div id="BuildHouse" class="EditorButton">Build House</div>');
+      this.house.click(function () {
+        cancel.show();
+      });
+      this.display = (0, _jquery["default"])('<div id="BarDisplay">Things</div>');
+      this.buttonHolder = (0, _jquery["default"])('<div id="PlayButtons"></div>');
+      this.containerElement.append(this.buttonHolder);
+      this.buttonHolder.append(this.logout);
+      this.buttonHolder.append(this.house);
+      this.buttonHolder.append(this.cancel);
+      this.containerElement.append(this.display);
+      this.cancel.hide();
     }
   }]);
 
@@ -1162,6 +1186,7 @@ var TileMap = /*#__PURE__*/function () {
     this.Height = data.world.Height;
     this.Tiles = data.world.Tiles;
     this.Rectangle = new _Rectangle.Rectangle(new _Position.Position(0, 0), new _Position.Position(this.Width, this.Height));
+    this.Types = data;
   }
 
   _createClass(TileMap, [{
@@ -1440,6 +1465,10 @@ var _ClientWorld = __webpack_require__(/*! ./ClientWorld */ "./_Client/_Code/_En
 
 var _Position = __webpack_require__(/*! ./Position */ "./_Client/_Code/_Engine/_Gameplay/Position.js");
 
+var _prettier = __webpack_require__(/*! prettier */ "./node_modules/prettier/standalone.js");
+
+var _Game = __webpack_require__(/*! ../../_Game/Game */ "./_Client/_Code/_Game/Game.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1488,6 +1517,21 @@ var MouseMover = /*#__PURE__*/function () {
 
       _ClientWorld.ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
       _ClientWorld.ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
+
+      if (_InputManager.InputManager.Mouseover) {
+        var _mouseWorldPos = _ClientWorld.ClientWorld.Camera.InverseTransformPos(_InputManager.InputManager.MousePosition);
+
+        if (_ClientWorld.ClientWorld.Tilemap.Rectangle.IsInsidePosition(_mouseWorldPos)) {
+          var x = Math.floor(_mouseWorldPos.X);
+          var y = Math.floor(_mouseWorldPos.Y);
+
+          try {
+            _Game.Game.CurrentAction = _ClientWorld.ClientWorld.Tilemap.Types[_ClientWorld.ClientWorld.Tilemap.Tiles[x][y].TileType].Name + " X: " + x + " Y: " + y;
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      }
     }
   }]);
 
@@ -1777,6 +1821,7 @@ var InputManager = /*#__PURE__*/function () {
     key: "Begin",
     value: function Begin() {
       InputManager.Mousedown = false;
+      InputManager.Mouseover = false;
       InputManager.MousePressLast = null;
       InputManager.MousePosition = new _Position.Position(0.0, 0.0);
       InputManager.Scroll = 1.0;
@@ -1784,9 +1829,16 @@ var InputManager = /*#__PURE__*/function () {
       InputManager.ScrollMax = 3.0;
 
       _Graphics.Graphics.Canvas.addEventListener('mousedown', function (e) {
-        console.log('down');
         InputManager.Mousedown = true;
         InputManager.MousePressLast = Date.now();
+      });
+
+      _Graphics.Graphics.Canvas.addEventListener('mouseover', function (e) {
+        InputManager.Mouseover = true;
+      });
+
+      _Graphics.Graphics.Canvas.addEventListener('mouseleave', function (e) {
+        InputManager.Mouseover = false;
       });
 
       _Graphics.Graphics.Canvas.addEventListener('mousemove', function (e) {

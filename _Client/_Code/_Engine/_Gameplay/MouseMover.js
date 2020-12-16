@@ -1,6 +1,8 @@
 import {InputManager} from "../_Input/InputManager";
 import {ClientWorld} from "./ClientWorld";
 import {Position} from "./Position";
+import {doc} from "prettier";
+import {Game} from "../../_Game/Game";
 
 export class MouseMover {
     constructor() {
@@ -43,5 +45,20 @@ export class MouseMover {
 
         ClientWorld.Camera.Rectangle.Center.X += this.Delta.X;
         ClientWorld.Camera.Rectangle.Center.Y += this.Delta.Y;
+
+        if (InputManager.Mouseover){
+            let mouseWorldPos = ClientWorld.Camera.InverseTransformPos(InputManager.MousePosition);
+
+            if (ClientWorld.Tilemap.Rectangle.IsInsidePosition(mouseWorldPos)){
+                let x = Math.floor(mouseWorldPos.X);
+                let y = Math.floor(mouseWorldPos.Y);
+
+                try {
+                    Game.CurrentAction = ClientWorld.Tilemap.Types[ClientWorld.Tilemap.Tiles[x][y].TileType].Name + " X: " + x + " Y: " + y;
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+        }
     }
 }

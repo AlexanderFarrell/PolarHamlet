@@ -25,3 +25,27 @@ a {
   height: 100%;
   z-index: -2;
 }
+
+#BarDisplay {
+  position: fixed;
+  min-width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: darkblue;
+  text-align: center;
+  color: white;
+  font-size: 4vmin;
+}
+
+#PlayButtons {
+  position: fixed;
+  min-width: 100%;
+  top: calc(100% - 15vmin);
+  bottom: 0;
+  display: flex;
+  color: white;
+  font-size: 4vmin;
+  justify-content: end;
+  align-items: end;
+}

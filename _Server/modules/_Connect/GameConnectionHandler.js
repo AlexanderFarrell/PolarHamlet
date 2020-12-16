@@ -14,7 +14,9 @@ class GameConnectionHandler {
         }));
         io.on('connection', (socket) => {
             console.log(socket.handshake.session.username + ' connected');
+
             if (socket.handshake.session.username !== undefined){
+                console.log("New Player " + socket.handshake.session.username + " with ID " + socket.id);
                 app.get("Game").Join(new Player(socket.handshake.session.username, socket.id), app);
             }
 
@@ -32,6 +34,12 @@ class GameConnectionHandler {
                 socket.emit('world', worldUpdates);
             }
         });
+
+        handler.SendOne = function UpdateOne(player, socketId){
+            console.log("Sending PLayer " + JSON.stringify(player));
+            console.log("Socket ID " + socketId);
+            io.to(socketId).emit('player', player);
+        }
 
         this.io = io;
 

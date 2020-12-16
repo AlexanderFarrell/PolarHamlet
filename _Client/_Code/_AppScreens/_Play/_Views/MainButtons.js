@@ -15,12 +15,35 @@ export class MainButtons extends UiContainer {
         //this.loginButton = $('<div id="LoginButton" class="StartButton">Login</div>');
 
 
+        this.cancel = $('<div id="CancelButton" class="EditorButton">Cancel</div>');
+
+        this.cancel.click(function (){
+            cancel.hide();
+        });
+
+        let cancel = this.cancel;
+
         this.logout.click(function (){
             GameStateFlow.ToLoginCreateAccountPage();
             GameBuilder.EndEngine();
             GameBuilder.DestroyGame();
         });
 
-        this.containerElement.append(this.logout);
+        this.house = $('<div id="BuildHouse" class="EditorButton">Build House</div>');
+
+        this.house.click(function (){
+            cancel.show();
+        });
+
+        this.display = $('<div id="BarDisplay">Things</div>');
+        this.buttonHolder = $('<div id="PlayButtons"></div>')
+
+        this.containerElement.append(this.buttonHolder);
+        this.buttonHolder.append(this.logout);
+        this.buttonHolder.append(this.house);
+        this.buttonHolder.append(this.cancel);
+        this.containerElement.append(this.display);
+
+        this.cancel.hide();
     }
 }

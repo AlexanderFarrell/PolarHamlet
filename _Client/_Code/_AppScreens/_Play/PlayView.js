@@ -15,7 +15,6 @@ export class PlayView extends AppStateView{
         callback();
     }
 
-
     Render() {
         let root = $('#root');
         root.append(this.mainButtons.containerElement);

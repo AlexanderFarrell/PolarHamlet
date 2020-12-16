@@ -14,6 +14,9 @@ export class PlayModel extends AppStateModel {
 
     Load(error, callback) {
         //setInterval(() => {this.Update();}, 500);
+        Game.PlayerData = "Fetching Statistics!";
+        Game.CurrentAction = "";
+
         $.ajax('/world', {
             method: 'POST',
             data: {turn: this.turn},
@@ -30,6 +33,18 @@ export class PlayModel extends AppStateModel {
                     })
                     Game.socket.on('world', (data) => {
                         console.log(data.turn);
+
+                        //$('#BarDisplay').innerText = data.turn;
+
+                        //document.getElementById('BarDisplay').innerText = data.turn;
+                    })
+                    Game.socket.on('player', (data) => {
+
+                        //console.log("Received Player Data!");
+                        //console.log(displayString);
+                        Game.PlayerData = "Citizens: " + data.citizens + " - Ore: " + data.ore + " - Food: " + data.food + " - Buildings: " + data.buildings;
+
+                        document.getElementById('BarDisplay').innerText = Game.PlayerData + "        " + Game.CurrentAction;
                     })
                     /*Game.socket.on('init', (data) => {
                         console.log("init with " + JSON.stringify(data));
@@ -95,7 +110,7 @@ export class PlayModel extends AppStateModel {
     }
 
     Update() {
-        Game.socket.emit('moves', {moves: 'This worked!'});
+        //Game.socket.emit('moves', {moves: 'This worked!'});
 
         //this.socket.emit("test");
         //this.socket.emit('Player sending moves to server');
