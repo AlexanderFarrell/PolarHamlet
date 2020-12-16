@@ -1,3 +1,4 @@
+const redis = require('redis');
 const session = require('express-session');
 //const MemcachedStore = require('connect-memjs')(session);
 //const redis = require('socket.io-redis')
