@@ -1,4 +1,5 @@
 const http = require('http');
+const {ConnectionService} = require("../modules/_Connect/ConnectionService");
 const debug = require('debug')('polarhamlet:server');
 
 exports.load = function load(app){
@@ -10,6 +11,15 @@ exports.load = function load(app){
 
     //Server
     const server = http.createServer(app);
+
+    let connectionIo = new ConnectionService();
+    connectionIo.Start(app, server);
+    app.set('sockets', connectionIo);
+
+    /*const connectionService = new ConnectionService();
+    app.set('sockets', connectionService);
+    connectionService.Start(server);*/
+
     server.listen(port);
     server.on('error', onError);
     server.on('listening', onListening);
@@ -43,6 +53,8 @@ exports.load = function load(app){
                 throw error;
         }
     }
+
+
 
     /**
      * Event listener for HTTP server "listening" event.

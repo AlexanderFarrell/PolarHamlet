@@ -3,6 +3,8 @@ import {GameBuilder} from "../../_Game/GameBuilder";
 import $ from 'jquery';
 import {Game} from "../../_Game/Game";
 
+import {io} from 'socket.io-client';
+
 export class PlayModel extends AppStateModel {
     constructor() {
         super();
@@ -10,7 +12,23 @@ export class PlayModel extends AppStateModel {
 
     Load(error, callback) {
         GameBuilder.StartEngine();
-        $.ajax('/game/join', {
+        let socket = io();
+
+        let update = this.UpdateNetwork;
+
+        /*this.io.on('connect', (socket) => {
+            socket.on('authenticated', function (){
+                setInterval(() => {update(socket);}, 1000)
+            });
+            socket.emit('authenticate', {});
+            socket.on('disconnect', () => {
+                console.log("Disconnected from server");
+            })
+        })*/
+
+        setInterval(() => {update(socket);}, 500);
+
+        /*$.ajax('/game/join', {
             method: 'POST',
             data: {game: 0},
             success: function (data){
@@ -25,17 +43,22 @@ export class PlayModel extends AppStateModel {
             error: function (data) {
                 error("Error connecting to server");
             }
-        })
+        })*/
     }
 
     Begin(error, callback) {
-        this.UpdateLoop = setInterval(this.Update, 1000);
+        this.UpdateLoop = setInterval(this.Update, 500);
 
         callback();
     }
 
-    async Update() {
-        if (!this.IsUpdating){
+    UpdateNetwork(socket){
+        socket.emit('Player sending moves to server');
+    }
+
+    Update() {
+        this.socket.emit('Player sending moves to server');
+        /*if (!this.IsUpdating){
             this.IsUpdating = true;
             $.ajax('/game', {
                 method: 'GET',
@@ -53,13 +76,15 @@ export class PlayModel extends AppStateModel {
                     error("Error connecting to server");
                 }
             })
-        }
+        }*/
     }
 
     End(error, callback) {
         clearInterval(this.UpdateLoop);
 
-        $.ajax('/game/leave', {
+        //Not needed to disconnect. This is actually beneficial only to the player.
+
+        /*$.ajax('/game/leave', {
             method: 'POST',
             data: {game: 0},
             success: function (data){
@@ -74,7 +99,7 @@ export class PlayModel extends AppStateModel {
             error: function (data) {
                 error("Error connecting to server");
             }
-        })
+        })*/
 
         super.End(error, callback);
     }

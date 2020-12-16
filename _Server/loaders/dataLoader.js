@@ -3,7 +3,7 @@ const MemcachedStore = require('connect-memjs')(session);
 
 function setupSessionsMemcache(app){
     if (process.env.MEMCACHIER_SERVERS){
-        app.use(session({
+        let session = require('express-session')({
             secret: process.env.sessionSecret,
             resave: false,
             saveUninitialized: false,
@@ -14,16 +14,22 @@ function setupSessionsMemcache(app){
             cookie: {
                 maxAge: 60 * 60 * 24 * 31 * 1000
             }
-        }));
+        })
+
+        app.use(session);
+        app.set('SessionHandler', session);
     } else {
-        app.use(session({
+        let session = require('express-session')({
             secret: 'HeyWhatIsC',
             resave: true,
             saveUninitialized: true,
             cookie: {
                 maxAge: 60 * 60 * 24 * 31 * 1000
             }
-        }));
+        });
+
+        app.use(session);
+        app.set('SessionHandler', session);
     }
 }
 

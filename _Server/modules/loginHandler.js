@@ -117,6 +117,7 @@ function login(req, res, success, error) {
             function onSuccessLogin(){
                 console.log("Password is good");
                 req.session.username = username;
+                req.session.loggedInCode = 5;
                 success();
             }
 
