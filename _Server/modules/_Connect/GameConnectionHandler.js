@@ -1,4 +1,4 @@
-const socketIoSession = require('express-socket.io-session');
+
 const {Player} = require("../_Game/Player");
 
 class GameConnectionHandler {
@@ -6,6 +6,9 @@ class GameConnectionHandler {
     Start(app, server){
         const io = require('socket.io')(server);
         const ioSession = require('express-socket.io-session');
+        if (process.env.REDIS_URL){
+            io.adapter(require('socket.io-redis')({ host: 'localhost', port: 6379 }));
+        }
 
         let handler = this;
 

@@ -98,8 +98,6 @@ function login(req, res, success, error) {
     }
 
     function onSuccessDatabaseGet(data){
-        console.log(data);
-
         if (data.rows[0]){
             let usernameRetrieved = data.rows[0]['username'];
             console.log(usernameRetrieved);
@@ -118,6 +116,7 @@ function login(req, res, success, error) {
                 console.log("Password is good");
                 req.session.username = username;
                 req.session.loggedInCode = 5;
+                console.log(req.session.username);
                 success();
             }
 
